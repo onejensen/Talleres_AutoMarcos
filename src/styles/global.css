@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1e3a5f;
-  --color-primary-light: #2a5298;
-  --color-primary-dark: #0f1f33;
-  --color-accent: #f59e0b;
-  --color-accent-dark: #d97706;
+  --color-primary: #C0392B;
+  --color-primary-light: #e74c3c;
+  --color-primary-dark: #96281b;
+  --color-accent: #C0392B;
+  --color-accent-dark: #96281b;
+  --color-secondary: #009866;
   --color-dark: #111827;
   --color-darker: #0a0f1a;
-  --color-surface: #1a2332;
+  --color-surface: #111111;
   --color-gray-light: #f3f4f6;
   --color-gray-medium: #6b7280;
 }
@@ -18,5 +20,49 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Archivo Black', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Archivo Black', system-ui, -apple-system, sans-serif;
+  font-weight: 900;
+}
+
+/* Bold typography scale */
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.01em; }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); line-height: 1.2; }
+
+/* Bold accent utilities */
+.accent-color { color: #C0392B; }
+.accent-bg { background-color: #C0392B; }
+
+/* Bold button base */
+.btn-bold {
+  background: #C0392B;
+  color: #fff;
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 900;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn-bold:hover { background: #96281b; }
+
+/* Bold card */
+.bold-card {
+  background: #111111;
+  border: 2px solid #1f2937;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 #C0392B;
+}
+.bold-card:hover {
+  border-color: #C0392B;
+  box-shadow: 6px 6px 0 #C0392B;
 }
