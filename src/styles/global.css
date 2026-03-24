@@ -173,3 +173,117 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.75rem); line-height: 1.1; letter-spacing: 0
   user-select: none;
   letter-spacing: -0.02em;
 }
+
+/* ============================================
+   MOBILE FIRST — 375px
+   ============================================ */
+@media (max-width: 767px) {
+  /* 1-column grids */
+  .grid-auto { grid-template-columns: 1fr !important; }
+  /* Readable hero */
+  h1 { font-size: clamp(2.2rem, 10vw, 4rem) !important; }
+  /* No overflow */
+  img { max-width: 100%; height: auto; }
+  /* Section padding */
+  section > div { padding-left: 16px !important; padding-right: 16px !important; }
+  /* Servicios list: stack vertically */
+  .service-editorial-row {
+    grid-template-columns: 64px 1fr !important;
+    gap: 16px !important;
+  }
+  .service-editorial-row .service-icon-col { display: none; }
+  /* Form */
+  form input, form textarea, form select { width: 100%; }
+  /* Stats: 2 cols */
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ============================================
+   ANIMATED COUNTER
+   ============================================ */
+@keyframes drawLine {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.draw-line {
+  height: 3px;
+  background: #C0392B;
+  width: 0;
+  animation: drawLine 1.2s ease-out 0.5s forwards;
+}
+
+/* ============================================
+   SERVICE EXPAND HOVER
+   ============================================ */
+.service-expand-line {
+  height: 2px;
+  background: #C0392B;
+  width: 40px;
+  transition: width 0.3s ease;
+  margin-top: 8px;
+}
+.service-editorial-item:hover .service-expand-line {
+  width: 100%;
+}
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#lightbox.active {
+  display: flex;
+}
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 2px solid #C0392B;
+}
+#lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10001;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonio {
+  background: #161616;
+  border-left: 3px solid #C0392B;
+  padding: 28px 32px;
+  border-radius: 2px;
+  margin-bottom: 0;
+}
+.testimonio p {
+  color: rgba(255,255,255,0.8);
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.testimonio cite {
+  color: #C0392B;
+  font-style: normal;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+

@@ -2,41 +2,91 @@
 import Layout from '../layouts/Layout.astro';
 
 const imagenes = [
-  { src: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80', alt: 'Mecánico trabajando en motor' },
-  { src: 'https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600&q=80', alt: 'Interior del taller mecánico' },
-  { src: 'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80', alt: 'Reparación de frenos' },
-  { src: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80', alt: 'Diagnóstico electrónico del vehículo' },
-  { src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80', alt: 'Coche en el taller' },
-  { src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80', alt: 'Vehículo reparado' },
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80', alt: 'Herramientas del taller' },
-  { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80', alt: 'Coche deportivo' },
-  { src: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80', alt: 'Trabajo de mecánica' },
+  { src: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&q=80', alt: 'Mecánico trabajando en motor' },
+  { src: 'https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80', alt: 'Interior del taller mecánico' },
+  { src: 'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80', alt: 'Reparación de frenos' },
+  { src: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80', alt: 'Diagnóstico electrónico del vehículo' },
+  { src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80', alt: 'Coche en el taller' },
+  { src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80', alt: 'Vehículo reparado' },
+  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80', alt: 'Herramientas del taller' },
+  { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80', alt: 'Coche deportivo' },
+  { src: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80', alt: 'Trabajo de mecánica' },
 ];
 ---
 
 <Layout title="Galería - Talleres AutoMarcos" description="Galería de fotos de Talleres AutoMarcos. Conoce nuestras instalaciones y nuestro trabajo en Mallorca.">
-  <section class="py-16 md:py-24 bg-darker">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Galería</h1>
-        <p class="text-gray-400 text-lg max-w-3xl mx-auto">Conoce nuestras instalaciones y el trabajo que realizamos cada día en Talleres AutoMarcos.</p>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" onclick="this.classList.remove('active')">
+    <span id="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('active')">✕</span>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <section style="padding:64px 0 96px;background:#0D0D0D;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+      <div style="text-align:center;margin-bottom:64px;">
+        <div style="display:inline-block;background:#C0392B;color:#fff;font-family:'Oswald',sans-serif;font-size:0.8rem;font-weight:500;text-transform:uppercase;letter-spacing:0.2em;padding:6px 16px;margin-bottom:16px;">Nuestro trabajo</div>
+        <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:16px;">Galería</h1>
+        <p style="color:rgba(255,255,255,0.55);font-family:'Source Sans 3',sans-serif;font-size:1.1rem;max-width:600px;margin:0 auto;">Conoce nuestras instalaciones y el trabajo que realizamos cada día en Talleres AutoMarcos.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {imagenes.map((img) => (
-          <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-surface">
+      <!-- Gallery grid with lightbox -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:4px;">
+        {imagenes.map((img, i) => (
+          <div
+            class="gallery-item"
+            style={`position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer;${i === 0 ? 'grid-column: span 2;' : ''}`}
+            data-src={img.src}
+            data-alt={img.alt}
+          >
             <img
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <p class="text-white text-sm font-medium">{img.alt}</p>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(192,57,43,0.7) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;" class="gallery-overlay">
+              <div style="position:absolute;bottom:16px;left:16px;right:16px;">
+                <p style="color:#fff;font-family:'Oswald',sans-serif;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;">{img.alt}</p>
+              </div>
             </div>
           </div>
         ))}
       </div>
     </div>
   </section>
+
+  <script>
+    // Lightbox
+    const items = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+
+    items.forEach(item => {
+      const img = item.querySelector('img') as HTMLImageElement;
+      const overlay = item.querySelector('.gallery-overlay') as HTMLElement;
+
+      item.addEventListener('mouseenter', () => {
+        img.style.transform = 'scale(1.08)';
+        overlay.style.opacity = '1';
+      });
+      item.addEventListener('mouseleave', () => {
+        img.style.transform = 'scale(1)';
+        overlay.style.opacity = '0';
+      });
+
+      item.addEventListener('click', () => {
+        const src = item.getAttribute('data-src') || '';
+        const alt = item.getAttribute('data-alt') || '';
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox?.classList.add('active');
+      });
+    });
+
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') lightbox?.classList.remove('active');
+    });
+  </script>
 </Layout>
