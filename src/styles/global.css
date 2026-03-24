@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,62 +7,169 @@
   --color-primary-dark: #96281b;
   --color-accent: #C0392B;
   --color-accent-dark: #96281b;
+  --color-bg: #0D0D0D;
+  --color-surface: #161616;
+  --color-surface-light: #f5f5f5;
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
   --color-secondary: #009866;
-  --color-dark: #111827;
-  --color-darker: #0a0f1a;
-  --color-surface: #111111;
+  --color-dark: #0D0D0D;
+  --color-darker: #080808;
   --color-gray-light: #f3f4f6;
   --color-gray-medium: #6b7280;
 }
 
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes underlineDraw {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ============================================
+   BASE
+   ============================================ */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Archivo Black', system-ui, -apple-system, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+  background-color: #0D0D0D;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Archivo Black', system-ui, -apple-system, sans-serif;
-  font-weight: 900;
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-/* Bold typography scale */
-h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -0.02em; }
-h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.01em; }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); line-height: 1.2; }
+/* Editorial typography scale */
+h1 { font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 0.95; letter-spacing: 0.02em; }
+h2 { font-size: clamp(2rem, 4.5vw, 4rem); line-height: 1.0; letter-spacing: 0.03em; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.75rem); line-height: 1.1; letter-spacing: 0.04em; }
 
-/* Bold accent utilities */
+/* ============================================
+   SCROLL ANIMATION CLASSES (set by IntersectionObserver)
+   ============================================ */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-in-left.visible,
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
 .accent-color { color: #C0392B; }
 .accent-bg { background-color: #C0392B; }
 
-/* Bold button base */
+/* Hover underline draw effect */
+.hover-underline {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #C0392B;
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   BUTTON
+   ============================================ */
 .btn-bold {
   background: #C0392B;
   color: #fff;
-  font-family: 'Archivo Black', sans-serif;
-  font-weight: 900;
-  padding: 16px 32px;
-  border-radius: 4px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  padding: 16px 40px;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease;
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
-.btn-bold:hover { background: #96281b; }
+.btn-bold:hover {
+  background: #96281b;
+  transform: translateY(-2px);
+}
 
-/* Bold card */
+/* ============================================
+   EDITORIAL CARD (dark on dark bg sections)
+   ============================================ */
 .bold-card {
-  background: #111111;
-  border: 2px solid #1f2937;
-  border-radius: 4px;
+  background: #161616;
+  border: 2px solid #222;
+  border-radius: 2px;
   box-shadow: 4px 4px 0 #C0392B;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 .bold-card:hover {
+  transform: translateY(-3px);
   border-color: #C0392B;
   box-shadow: 6px 6px 0 #C0392B;
+}
+
+/* Decorative bg number style */
+.deco-number {
+  position: absolute;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(6rem, 15vw, 14rem);
+  opacity: 0.05;
+  color: #fff;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
 }
