@@ -1,0 +1,122 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Talleres AutoMarcos - Tu taller mecánico de confianza en Mallorca. Mecánica general, electricidad, frenos, neumáticos, ITV y más.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="taller mecánico Mallorca, mecánica general, reparación coches Mallorca, ITV Mallorca, cambio aceite, frenos, neumáticos, electricidad vehículo" />
+    <meta name="author" content="Talleres AutoMarcos" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-darker text-gray-200 min-h-screen flex flex-col">
+    <header class="bg-dark/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-20">
+          <a href="/" class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <span class="text-xl font-bold text-white">AutoMarcos</span>
+              <span class="hidden sm:block text-xs text-gray-400">Taller Mecánico en Mallorca</span>
+            </div>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2" aria-label="Abrir menú">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+
+          <!-- Desktop nav -->
+          <div class="hidden md:flex items-center gap-1">
+            <a href="/" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Inicio</a>
+            <a href="/servicios" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Servicios</a>
+            <a href="/galeria" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Galería</a>
+            <a href="/blog" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Blog</a>
+            <a href="/contacto" class="ml-2 px-5 py-2 bg-accent hover:bg-accent-dark text-dark font-semibold rounded-lg transition-colors text-sm">Contacto</a>
+          </div>
+        </div>
+
+        <!-- Mobile nav -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <div class="flex flex-col gap-1">
+            <a href="/" class="px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Inicio</a>
+            <a href="/servicios" class="px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Servicios</a>
+            <a href="/galeria" class="px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Galería</a>
+            <a href="/blog" class="px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Blog</a>
+            <a href="/contacto" class="px-4 py-3 bg-accent hover:bg-accent-dark text-dark font-semibold rounded-lg transition-colors text-center mt-2">Contacto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-dark border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-lg font-bold text-white mb-4">Talleres AutoMarcos</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Tu taller mecánico de confianza en Mallorca. Más de 20 años de experiencia cuidando de tu vehículo.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-4">Horario</h3>
+            <ul class="text-gray-400 text-sm space-y-2">
+              <li>Lunes - Viernes: 8:00 - 18:00</li>
+              <li>Sábado: 9:00 - 13:00</li>
+              <li>Domingo: Cerrado</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-4">Contacto</h3>
+            <ul class="text-gray-400 text-sm space-y-2">
+              <li>C/ Ejemplo 123, Palma de Mallorca</li>
+              <li>Tel: +34 600 000 000</li>
+              <li>info@talleresautomarcos.es</li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} Talleres AutoMarcos. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp floating button -->
+    <a
+      href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Talleres%20AutoMarcos"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

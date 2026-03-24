@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const imagenes = [
+  { src: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80', alt: 'Mecánico trabajando en motor' },
+  { src: 'https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600&q=80', alt: 'Interior del taller mecánico' },
+  { src: 'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80', alt: 'Reparación de frenos' },
+  { src: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80', alt: 'Diagnóstico electrónico del vehículo' },
+  { src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80', alt: 'Coche en el taller' },
+  { src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80', alt: 'Vehículo reparado' },
+  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80', alt: 'Herramientas del taller' },
+  { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80', alt: 'Coche deportivo' },
+  { src: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80', alt: 'Trabajo de mecánica' },
+];
+---
+
+<Layout title="Galería - Talleres AutoMarcos" description="Galería de fotos de Talleres AutoMarcos. Conoce nuestras instalaciones y nuestro trabajo en Mallorca.">
+  <section class="py-16 md:py-24 bg-darker">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Galería</h1>
+        <p class="text-gray-400 text-lg max-w-3xl mx-auto">Conoce nuestras instalaciones y el trabajo que realizamos cada día en Talleres AutoMarcos.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {imagenes.map((img) => (
+          <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-surface">
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <p class="text-white text-sm font-medium">{img.alt}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
