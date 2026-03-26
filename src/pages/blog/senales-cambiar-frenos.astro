@@ -1,55 +1,61 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="5 señales de que necesitas cambiar los frenos - Talleres AutoMarcos" description="Aprende a identificar las 5 señales principales que indican que es hora de cambiar los frenos de tu coche. Tu seguridad es lo primero.">
-  <article class="py-16 md:py-24 bg-darker">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="/blog" class="inline-flex items-center gap-2 text-accent hover:text-accent-dark transition-colors mb-8 text-sm font-medium">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+  <article style="padding:64px 0 96px;background:#080808;">
+    <div style="max-width:768px;margin:0 auto;padding:0 16px;">
+      <a href={`${base}/blog`} style="display:inline-flex;align-items:center;gap:8px;color:#F5A623;text-decoration:none;margin-bottom:32px;font-size:0.9rem;font-family:'Oswald',sans-serif;text-transform:uppercase;">
+        <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         Volver al blog
       </a>
 
-      <div class="mb-8">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">Seguridad</span>
-          <span class="text-xs text-gray-500">1 de marzo de 2026</span>
+      <div style="margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">Seguridad</span>
+          <span style="font-size:0.75rem;color:#6b7280;">1 de marzo de 2026</span>
         </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-6">5 señales de que necesitas cambiar los frenos de tu coche</h1>
-        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80" alt="Sistema de frenos del coche" class="w-full rounded-2xl aspect-video object-cover" />
+        <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:24px;">5 señales de que necesitas cambiar los frenos de tu coche</h1>
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80" alt="Sistema de frenos del coche" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover;" />
       </div>
 
-      <div class="prose prose-invert max-w-none space-y-6 text-gray-300 leading-relaxed">
-        <p class="text-lg">Los <strong class="text-white">frenos</strong> son el sistema de seguridad más importante de tu vehículo. Saber identificar las señales de desgaste puede evitar accidentes y reparaciones costosas.</p>
+      <div style="color:#d1d5db;line-height:1.8;font-size:1rem;">
+        <p style="font-size:1.1rem;margin-bottom:24px;">Los <strong style="color:#fff;">frenos</strong> son el sistema de seguridad más importante de tu vehículo. A diferencia de otros componentes, un fallo en los frenos puede tener consecuencias inmediatas y graves. Saber identificar las señales de desgaste a tiempo puede evitar accidentes y, además, ahorrarte reparaciones mucho más costosas. Aquí te explicamos las cinco señales más claras de que tus frenos necesitan atención.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">1. Chirridos o ruidos al frenar</h2>
-        <p>Si escuchas un <strong class="text-white">chirrido agudo</strong> al pisar el freno, es la señal más clara de que las pastillas están desgastadas. Las pastillas de freno tienen indicadores de desgaste metálicos que producen este sonido cuando el material de fricción se ha gastado. No ignores este ruido: cuanto más tardes en actuar, más caro será el arreglo.</p>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">1. Chirridos o ruidos al frenar</h2>
+        <p style="margin-bottom:16px;">Si escuchas un <strong style="color:#fff;">chirrido agudo y metálico</strong> al pisar el freno, es la señal más clara de que las pastillas están desgastadas. Las pastillas de freno modernas incorporan unos indicadores de desgaste: pequeñas láminas metálicas que producen ese sonido característico cuando el material de fricción se ha gastado hasta un nivel mínimo.</p>
+        <p style="margin-bottom:24px;">No ignores este ruido. Si continúas circulando con las pastillas desgastadas, el metal del soporte de la pastilla empezará a rozar directamente contra el disco de freno, dañándolo de forma irreversible. Lo que podría ser un cambio de pastillas de 80-150 € se convierte en un cambio completo de discos y pastillas que puede superar los 400 €.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">2. Vibración en el pedal o volante</h2>
-        <p>Si notas <strong class="text-white">vibraciones</strong> al frenar, especialmente a alta velocidad, puede indicar que los discos de freno están deformados o tienen un desgaste irregular. Los discos se deforman por el calor excesivo, algo habitual en frenadas bruscas repetidas o al frenar en pendientes largas.</p>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">2. Vibración en el pedal o volante</h2>
+        <p style="margin-bottom:16px;">Si notas <strong style="color:#fff;">vibraciones o pulsaciones</strong> en el pedal de freno al frenar, especialmente a velocidades medias y altas, puede indicar que los discos de freno están alabeados (deformados) o tienen un desgaste irregular.</p>
+        <p style="margin-bottom:24px;">Los discos se deforman principalmente por el calor excesivo, algo habitual en frenadas bruscas repetidas, al circular por puertos de montaña o cuando se frena con el pie constantemente durante pendientes largas. También puede ocurrir si se aprietan las ruedas con un par de apriete incorrecto. Un disco alabeado no solo genera vibraciones molestas, sino que reduce significativamente la eficacia de frenado.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">3. Mayor distancia de frenado</h2>
-        <p>Si notas que tu coche tarda más de lo normal en detenerse, es una señal seria de que el sistema de frenado no está funcionando correctamente. Puede deberse a pastillas desgastadas, líquido de frenos degradado o problemas en las pinzas.</p>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">3. Mayor distancia de frenado</h2>
+        <p style="margin-bottom:16px;">Si notas que tu coche tarda más de lo habitual en detenerse, o que necesitas pisar el pedal con más fuerza que antes, es una señal seria de que el sistema de frenado no está funcionando correctamente.</p>
+        <p style="margin-bottom:24px;">Las causas más comunes son pastillas desgastadas (con poco material de fricción), líquido de frenos degradado (que pierde sus propiedades hidráulicas con el tiempo, especialmente al absorber humedad), o problemas mecánicos en las pinzas de freno que impiden que las pastillas contacten correctamente con el disco. Esta señal es especialmente peligrosa porque puede manifestarse de forma gradual, lo que hace que el conductor se acostumbre al aumento de distancia sin ser plenamente consciente del riesgo.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">4. El coche se desvía al frenar</h2>
-        <p>Si al pisar el freno el coche <strong class="text-white">tira hacia un lado</strong>, puede indicar un desgaste desigual de las pastillas o un problema con las pinzas de freno. También puede ser señal de un problema en la suspensión, pero en cualquier caso requiere revisión inmediata.</p>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">4. El coche se desvía al frenar</h2>
+        <p style="margin-bottom:24px;">Si al pisar el freno el coche <strong style="color:#fff;">tira hacia un lado</strong>, puede indicar un desgaste desigual de las pastillas, una pinza de freno agarrotada que no aplica la misma presión en ambos lados, o una fuga en el circuito hidráulico. También puede ser señal de un problema en la suspensión o la alineación, pero en cualquier caso requiere una revisión inmediata. Un coche que se desvía al frenar es impredecible en una frenada de emergencia y representa un riesgo real para tu seguridad y la de los demás.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">5. Testigo de frenos encendido</h2>
-        <p>Si se enciende la <strong class="text-white">luz de frenos</strong> en el cuadro de instrumentos, no lo ignores. Puede indicar desde un nivel bajo de líquido de frenos hasta un fallo en el sistema ABS. Acude al taller lo antes posible para un diagnóstico.</p>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">5. Testigo de frenos encendido</h2>
+        <p style="margin-bottom:16px;">Si se enciende la <strong style="color:#fff;">luz de frenos</strong> en el cuadro de instrumentos (normalmente un círculo con un signo de exclamación o las letras "BRAKE"), no lo ignores bajo ningún concepto. Puede indicar desde un nivel bajo de líquido de frenos hasta un fallo en el sistema ABS o un desgaste extremo de las pastillas.</p>
+        <p style="margin-bottom:24px;">Lo primero que debes hacer es comprobar que no tienes puesto el freno de mano. Si la luz sigue encendida, reduce la velocidad y acude al taller lo antes posible. Circular con este testigo encendido es extremadamente peligroso.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">¿Cada cuánto se cambian los frenos?</h2>
-        <p>Como norma general:</p>
-        <ul class="list-disc pl-6 space-y-2">
-          <li><strong class="text-white">Pastillas de freno:</strong> cada 30.000 - 60.000 km.</li>
-          <li><strong class="text-white">Discos de freno:</strong> cada 60.000 - 120.000 km.</li>
-          <li><strong class="text-white">Líquido de frenos:</strong> cada 2 años o 40.000 km.</li>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">¿Cada cuánto se cambian los frenos?</h2>
+        <p style="margin-bottom:16px;">Como norma general, los componentes del sistema de frenado tienen la siguiente vida útil:</p>
+        <ul style="list-style:disc;padding-left:24px;margin-bottom:24px;">
+          <li style="margin-bottom:8px;"><strong style="color:#fff;">Pastillas de freno:</strong> cada 30.000 - 60.000 km, dependiendo del estilo de conducción y el tipo de pastilla.</li>
+          <li style="margin-bottom:8px;"><strong style="color:#fff;">Discos de freno:</strong> cada 60.000 - 120.000 km. Duran más que las pastillas, pero deben medirse periódicamente.</li>
+          <li style="margin-bottom:8px;"><strong style="color:#fff;">Líquido de frenos:</strong> cada 2 años o 40.000 km. Es higroscópico (absorbe humedad del ambiente), lo que reduce su punto de ebullición.</li>
+          <li style="margin-bottom:8px;"><strong style="color:#fff;">Pinzas de freno:</strong> no tienen una vida útil definida, pero deben revisarse periódicamente para detectar fugas o agarrotamientos.</li>
         </ul>
-        <p>Estos valores varían según el estilo de conducción, el tipo de vehículo y las condiciones de circulación.</p>
+        <p style="margin-bottom:24px;">Estos valores varían significativamente según el estilo de conducción (ciudad vs carretera), el tipo de vehículo y las condiciones de circulación. Un conductor urbano que frena constantemente desgastará las pastillas mucho antes que uno que circula principalmente por autopista.</p>
 
-        <div class="mt-10 bg-surface rounded-2xl p-8 border border-gray-800 text-center">
-          <h3 class="text-xl font-bold text-white mb-3">¿Notas alguna de estas señales?</h3>
-          <p class="text-gray-400 mb-6">No arriesgues tu seguridad. Ven a Talleres AutoMarcos y revisamos tus frenos sin compromiso.</p>
-          <a href="https://wa.me/34600000000?text=Hola%2C%20necesito%20revisar%20los%20frenos%20de%20mi%20coche" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-colors">
+        <div style="margin-top:40px;background:#161616;border-radius:16px;padding:32px;border:1px solid #222;text-align:center;">
+          <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:12px;">¿Notas alguna de estas señales?</h3>
+          <p style="color:#9ca3af;margin-bottom:24px;">No arriesgues tu seguridad. Ven a Talleres AutoMarcos y revisamos tus frenos sin compromiso.</p>
+          <a href="https://wa.me/34623942526?text=Hola%2C%20necesito%20revisar%20los%20frenos%20de%20mi%20coche" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#25d366;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;">
             Pedir cita por WhatsApp
           </a>
         </div>

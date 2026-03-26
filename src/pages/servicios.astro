@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const servicios = [
   {
@@ -48,36 +49,36 @@ const servicios = [
 ---
 
 <Layout title="Servicios - Talleres AutoMarcos" description="Descubre todos los servicios de Talleres AutoMarcos: mecánica general, electricidad, frenos, neumáticos, ITV pre-revisión y mucho más en Mallorca.">
-  <section class="py-16 md:py-24 bg-darker">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Nuestros Servicios</h1>
-        <p class="text-gray-400 text-lg max-w-3xl mx-auto">En Talleres AutoMarcos ofrecemos un servicio integral para tu vehículo. Sea cual sea la avería o el mantenimiento que necesites, estamos aquí para ayudarte.</p>
+  <section style="padding:64px 0 96px;background:#080808;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 16px;">
+      <div style="text-align:center;margin-bottom:64px;">
+        <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:16px;">Nuestros Servicios</h1>
+        <p style="color:#9ca3af;font-size:1.1rem;max-width:768px;margin:0 auto;">En Talleres AutoMarcos ofrecemos un servicio integral para tu vehículo. Sea cual sea la avería o el mantenimiento que necesites, estamos aquí para ayudarte.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="grid-auto">
         {servicios.map((s) => (
-          <article class="bg-surface rounded-xl p-8 border border-gray-800 hover:border-accent/50 transition-colors group">
-            <div class="flex items-start gap-5">
-              <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <article style="background:#161616;border-radius:8px;padding:32px;border:1px solid #222;">
+            <div style="display:flex;align-items:flex-start;gap:20px;">
+              <div style="width:56px;height:56px;background:rgba(245,166,35,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg style="width:28px;height:28px;color:#F5A623;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={s.icono}/>
                   {s.iconoExtra && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={s.iconoExtra}/>}
                 </svg>
               </div>
               <div>
-                <h2 class="text-xl font-semibold text-white mb-3">{s.titulo}</h2>
-                <p class="text-gray-400 leading-relaxed">{s.descripcion}</p>
+                <h2 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:600;color:#fff;margin-bottom:12px;">{s.titulo}</h2>
+                <p style="color:#9ca3af;line-height:1.6;">{s.descripcion}</p>
               </div>
             </div>
           </article>
         ))}
       </div>
 
-      <div class="mt-16 bg-gradient-to-r from-primary-dark to-primary rounded-2xl p-8 md:p-12 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">¿No encuentras lo que buscas?</h2>
-        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">Contáctanos y cuéntanos qué necesita tu vehículo. Estaremos encantados de ayudarte y darte un presupuesto sin compromiso.</p>
-        <a href="/contacto" class="inline-block px-8 py-4 bg-accent hover:bg-accent-dark text-dark font-bold rounded-xl transition-colors text-lg">
+      <div style="margin-top:64px;background:linear-gradient(to right,#D4891A,#F5A623);border-radius:16px;padding:48px;text-align:center;">
+        <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:#0D0D0D;margin-bottom:16px;">¿No encuentras lo que buscas?</h2>
+        <p style="color:rgba(13,13,13,0.8);margin-bottom:32px;max-width:640px;margin-left:auto;margin-right:auto;">Contáctanos y cuéntanos qué necesita tu vehículo. Estaremos encantados de ayudarte y darte un presupuesto sin compromiso.</p>
+        <a href={`${base}/contacto`} style="display:inline-block;padding:16px 32px;background:#0D0D0D;color:#F5A623;font-family:'Oswald',sans-serif;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.05em;">
           Solicitar Presupuesto
         </a>
       </div>

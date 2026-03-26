@@ -1,6 +1,5 @@
 ---
-// AutoMarcos - Tech-Noir Design by Stitch
-// Standalone page — compiled CSS via frontmatter import
+// AutoMarcos - Standalone homepage
 import "../styles/global.css";
 const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 ---
@@ -11,162 +10,179 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="description" content="Talleres AutoMarcos - Taller mecánico de confianza en Mallorca. Más de 44 años de experiencia, honestidad y precisión."/>
-<meta property="og:title" content="AutoMarcos | Precision Engineering Mallorca"/>
+<meta property="og:title" content="AutoMarcos | Taller Mecánico Mallorca"/>
 <meta property="og:type" content="website"/>
 <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}/>
-<title>AutoMarcos | Precision Engineering Mallorca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>AutoMarcos | Taller Mecánico Mallorca</title>
 </head>
 
 <div class="fixed inset-0 grain-overlay z-[100]"></div>
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md border-b border-white/10 shadow-2xl">
 <div class="flex justify-between items-center px-8 py-4 max-w-none w-full">
-<div class="text-2xl font-black tracking-tighter text-white uppercase font-headline">
-                AutoMarcos
-            </div>
-<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] uppercase tracking-widest text-sm">
-<a class="text-[#c0392b] font-bold border-b-2 border-[#c0392b] pb-1" href="#">Inicio</a>
-<a class="text-white/70 hover:text-white transition-colors" href="#">Servicios</a>
-<a class="text-white/70 hover:text-white transition-colors" href="#">Galería</a>
-<a class="text-white/70 hover:text-white transition-colors" href="#">Blog</a>
-<a class="text-white/70 hover:text-white transition-colors" href="#">Contacto</a>
-<div class="h-6 w-[1px] bg-white/10 mx-2"></div>
-<a href="https://wa.me/34623942526" target="_blank" rel="noopener" class="bg-primary-container text-white px-6 py-2 font-bold hover:scale-105 active:scale-95 transition-transform rounded-sm">Pedir Cita</a>
+<a href={`${base}/`} style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+  <img src={`${base}/logo-automarcos.svg`} width="64" alt="AutoMarcos logo" style="display:inline-block" />
+  <div>
+    <span style="font-size:1.5rem;font-weight:700;color:#fff;font-family:'Oswald',sans-serif;letter-spacing:-0.02em;">AutoMarcos</span>
+    <span style="display:block;font-size:0.7rem;color:#F5A623;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;">Taller Mecánico · Mallorca</span>
+  </div>
+</a>
+<div id="desktop-nav-home" style="display:flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:0.85rem;">
+<a style="color:#F5A623;font-weight:700;border-bottom:2px solid #F5A623;padding-bottom:4px;" href={`${base}/`}>Inicio</a>
+<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/servicios`}>Servicios</a>
+<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/galeria`}>Galería</a>
+<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/blog`}>Blog</a>
+<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/contacto`}>Contacto</a>
+<div style="height:24px;width:1px;background:rgba(255,255,255,0.1);margin:0 8px;"></div>
+<a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="background:#F5A623;color:#0D0D0D;padding:8px 20px;font-weight:700;text-decoration:none;border-radius:2px;">Pedir Cita</a>
 </div>
-<button class="md:hidden text-white">
-<span class="material-symbols-outlined">menu</span>
+<button id="mobile-menu-btn-home" style="display:none;color:#fff;background:none;border:2px solid #F5A623;padding:6px 10px;cursor:pointer;border-radius:4px;" aria-label="Abrir menú">
+  <svg style="width:24px;height:24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
+</div>
+<!-- Mobile dropdown -->
+<div id="mobile-dropdown-home" style="display:none;flex-direction:column;gap:4px;padding:0 8px 16px;">
+  <a href={`${base}/`} style="padding:12px 16px;color:#F5A623;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Inicio</a>
+  <a href={`${base}/servicios`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Servicios</a>
+  <a href={`${base}/galeria`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Galería</a>
+  <a href={`${base}/blog`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Blog</a>
+  <a href={`${base}/contacto`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Contacto</a>
+  <a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="margin-top:8px;padding:14px 24px;background:#F5A623;color:#0D0D0D;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-align:center;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Pedir Cita</a>
 </div>
 </nav>
 <!-- Hero Section -->
 <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover scale-105 brightness-[0.4]" data-alt="dramatic wide shot of a pristine high-end automotive workshop with soft overhead lighting and a high-performance engine being serviced" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_sWIsUhtjDQU26e5QHOtlj4lHkUm7B-nNINn7c2Mu9qAEEKxkTxhXc8j0NQPLkqg_QdFE2MMzo371i7-S-jTLrfbX4RpBx4lgQs0FIQ3QjirkT5wiOhZEH5m7ZUb46CQ44RuyrSg5kEwukcNIHcaFmwwunSmZGBDW9qw_4CAwXYhGEBTf1q1mxyeD8Suxqwv_puw3USsU1Xd1nH2Yq36h0Jq4pcHeDq_RMiRDeLKxSq8NqIElsJPdvobM0UQQhq0T3BjpfzRwzc"/>
+<img class="w-full h-full object-cover scale-105 brightness-[0.4]" alt="Taller mecánico profesional AutoMarcos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_sWIsUhtjDQU26e5QHOtlj4lHkUm7B-nNINn7c2Mu9qAEEKxkTxhXc8j0NQPLkqg_QdFE2MMzo371i7-S-jTLrfbX4RpBx4lgQs0FIQ3QjirkT5wiOhZEH5m7ZUb46CQ44RuyrSg5kEwukcNIHcaFmwwunSmZGBDW9qw_4CAwXYhGEBTf1q1mxyeD8Suxqwv_puw3USsU1Xd1nH2Yq36h0Jq4pcHeDq_RMiRDeLKxSq8NqIElsJPdvobM0UQQhq0T3BjpfzRwzc"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
 </div>
 <div class="relative z-10 px-8 md:px-16 max-w-5xl">
-<p class="font-label text-primary tracking-[0.3em] uppercase mb-4 text-xs font-bold">Mallorca • Precision Service</p>
-<h1 class="font-headline text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
-                TU TALLER DE <span class="text-primary-container">CONFIANZA</span> EN MALLORCA
-            </h1>
-<p class="text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed font-light">Más de 44 años de experiencia, honestidad y compromiso. Ingeniería de precisión aplicada al cuidado de su vehículo.</p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-primary-container text-white px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-sm hover:brightness-110 transition-all active:scale-95">
-                    PEDIR CITA
-                </button>
-<a href="https://wa.me/34623942526?text=Hola%2C%20quiero%20pedir%20cita" target="_blank" rel="noopener" class="bg-white text-primary-container px-12 py-5 font-headline font-black uppercase tracking-[0.2em] text-lg rounded-sm hover:scale-105 transition-all shadow-xl inline-flex items-center gap-4 mx-auto group">
-                    NUESTROS SERVICIOS
-                </button>
+<img src={`${base}/logo-automarcos.svg`} width="260" alt="AutoMarcos logo" style="display:block;margin-bottom:24px;" />
+<p style="font-family:'Oswald',sans-serif;color:#F5A623;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:16px;font-size:0.75rem;font-weight:700;">Mallorca · Taller de Confianza</p>
+<h1 style="font-family:'Oswald',sans-serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.02em;line-height:0.9;margin-bottom:24px;">
+  TU TALLER DE <span style="color:#F5A623;">CONFIANZA</span> EN MALLORCA
+</h1>
+<p style="font-size:1.15rem;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:40px;line-height:1.6;font-weight:300;">Más de 44 años de experiencia, honestidad y compromiso. Ingeniería de precisión aplicada al cuidado de su vehículo.</p>
+<div style="display:flex;flex-wrap:wrap;gap:16px;">
+<a href="https://wa.me/34623942526?text=Hola%2C%20quiero%20pedir%20cita" target="_blank" rel="noopener" style="background:#F5A623;color:#0D0D0D;padding:16px 40px;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;font-size:0.9rem;text-decoration:none;border-radius:2px;">
+  PEDIR CITA
+</a>
+<a href={`${base}/servicios`} style="background:#fff;color:#F5A623;padding:16px 40px;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;font-size:0.9rem;text-decoration:none;border-radius:2px;">
+  NUESTROS SERVICIOS
+</a>
 </div>
 </div>
 <!-- Asymmetric Element -->
 <div class="absolute bottom-10 right-0 hidden lg:block translate-x-12 opacity-20">
-<span class="font-headline text-[15rem] font-black leading-none select-none text-white/10">MARCOS</span>
+<span style="font-family:'Oswald',sans-serif;font-size:15rem;font-weight:700;line-height:1;user-select:none;color:rgba(255,255,255,0.1);">MARCOS</span>
 </div>
 </header>
 <!-- Stats Banner -->
-<section class="bg-surface-container-lowest py-16 border-y border-white/5">
-<div class="max-w-7xl mx-auto px-8">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
-<div class="flex items-center gap-4">
-<div class="w-1 h-12 bg-primary-container"></div>
+<section style="background:#0e0e0e;padding:64px 0;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
+<div style="max-width:1280px;margin:0 auto;padding:0 32px;">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:48px;" class="stats-grid">
+<div style="display:flex;align-items:center;gap:16px;">
+<div style="width:4px;height:48px;background:#F5A623;"></div>
 <div>
-<p class="text-3xl font-headline font-bold text-white leading-none">44+</p>
-<p class="text-xs uppercase tracking-widest text-white/50 mt-1">Años de Exp.</p>
+<p style="font-size:1.875rem;font-family:'Oswald',sans-serif;font-weight:700;color:#fff;line-height:1;">44+</p>
+<p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-top:4px;">Años de Exp.</p>
 </div>
 </div>
-<div class="flex items-center gap-4">
-<div class="w-1 h-12 bg-primary-container"></div>
+<div style="display:flex;align-items:center;gap:16px;">
+<div style="width:4px;height:48px;background:#F5A623;"></div>
 <div>
-<p class="text-3xl font-headline font-bold text-white leading-none">44+</p>
-<p class="text-xs uppercase tracking-widest text-white/50 mt-1">Clientes</p>
+<p style="font-size:1.875rem;font-family:'Oswald',sans-serif;font-weight:700;color:#fff;line-height:1;">1000+</p>
+<p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-top:4px;">Clientes</p>
 </div>
 </div>
-<div class="flex items-center gap-4">
-<div class="w-1 h-12 bg-primary-container"></div>
+<div style="display:flex;align-items:center;gap:16px;">
+<div style="width:4px;height:48px;background:#F5A623;"></div>
 <div>
-<p class="text-3xl font-headline font-bold text-white leading-none">44+</p>
-<p class="text-xs uppercase tracking-widest text-white/50 mt-1">Transparencia</p>
+<p style="font-size:1.875rem;font-family:'Oswald',sans-serif;font-weight:700;color:#fff;line-height:1;">100%</p>
+<p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-top:4px;">Transparencia</p>
 </div>
 </div>
-<div class="flex items-center gap-4">
-<div class="w-1 h-12 bg-primary-container"></div>
+<div style="display:flex;align-items:center;gap:16px;">
+<div style="width:4px;height:48px;background:#F5A623;"></div>
 <div>
-<p class="text-3xl font-headline font-bold text-white leading-none">44+</p>
-<p class="text-xs uppercase tracking-widest text-white/50 mt-1">Días Garantía</p>
+<p style="font-size:1.875rem;font-family:'Oswald',sans-serif;font-weight:700;color:#fff;line-height:1;">90</p>
+<p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-top:4px;">Días Garantía</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Services Grid -->
-<section class="py-24 px-8 bg-surface">
-<div class="max-w-7xl mx-auto">
-<div class="mb-16">
-<p class="font-label text-primary tracking-[0.3em] uppercase mb-2 text-xs font-bold">Performance &amp; Safety</p>
-<h2 class="font-headline text-4xl font-black text-white uppercase tracking-tight">NUESTROS SERVICIOS</h2>
+<section style="padding:96px 32px;background:#131313;">
+<div style="max-width:1280px;margin:0 auto;">
+<div style="margin-bottom:64px;">
+<p style="font-family:'Oswald',sans-serif;color:#F5A623;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:8px;font-size:0.75rem;font-weight:700;">Performance &amp; Safety</p>
+<h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;">NUESTROS SERVICIOS</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;" class="grid-auto">
 <!-- Card 1 -->
-<div class="group bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-500 cursor-default">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-6 group-hover:scale-110 transition-transform block">reset_wrench</span>
-<h3 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-wide">Mecánica General</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Diagnóstico avanzado y reparación integral de motores, transmisiones y sistemas de suspensión.</p>
-<div class="h-[1px] w-8 bg-primary-container group-hover:w-full transition-all duration-500"></div>
+<div style="background:#201f1f;padding:40px;transition:background 0.5s;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">reset_wrench</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Mecánica General</h3>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Diagnóstico avanzado y reparación integral de motores, transmisiones y sistemas de suspensión.</p>
+<div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
 <!-- Card 2 -->
-<div class="group bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-500 cursor-default">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-6 group-hover:scale-110 transition-transform block">bolt</span>
-<h3 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-wide">Electricidad</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Sistemas electrónicos complejos, diagnosis OBD-II y mantenimiento de baterías de última generación.</p>
-<div class="h-[1px] w-8 bg-primary-container group-hover:w-full transition-all duration-500"></div>
+<div style="background:#201f1f;padding:40px;transition:background 0.5s;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">bolt</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Electricidad</h3>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Sistemas electrónicos complejos, diagnosis OBD-II y mantenimiento de baterías de última generación.</p>
+<div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
 <!-- Card 3 -->
-<div class="group bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-500 cursor-default">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-6 group-hover:scale-110 transition-transform block">oil_barrel</span>
-<h3 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-wide">Cambio de Aceite</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Lubricantes sintéticos de alto rendimiento y sustitución técnica de filtros según normativa OEM.</p>
-<div class="h-[1px] w-8 bg-primary-container group-hover:w-full transition-all duration-500"></div>
+<div style="background:#201f1f;padding:40px;transition:background 0.5s;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">oil_barrel</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Cambio de Aceite</h3>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Lubricantes sintéticos de alto rendimiento y sustitución técnica de filtros según normativa OEM.</p>
+<div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
 <!-- Card 4 -->
-<div class="group bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-500 cursor-default">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-6 group-hover:scale-110 transition-transform block">sports_score</span>
-<h3 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-wide">Sistemas de Frenos</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Rectificación de discos, sustitución de pastillas y purgado de sistemas hidráulicos ABS/ESP.</p>
-<div class="h-[1px] w-8 bg-primary-container group-hover:w-full transition-all duration-500"></div>
+<div style="background:#201f1f;padding:40px;transition:background 0.5s;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">sports_score</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Sistemas de Frenos</h3>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Rectificación de discos, sustitución de pastillas y purgado de sistemas hidráulicos ABS/ESP.</p>
+<div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
 <!-- Card 5 -->
-<div class="group bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-500 cursor-default">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-6 group-hover:scale-110 transition-transform block">verified</span>
-<h3 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-wide">Pre-ITV</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Inspección técnica exhaustiva de 40 puntos críticos para asegurar la superación del examen oficial.</p>
-<div class="h-[1px] w-8 bg-primary-container group-hover:w-full transition-all duration-500"></div>
+<div style="background:#201f1f;padding:40px;transition:background 0.5s;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">verified</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Pre-ITV</h3>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Inspección técnica exhaustiva de 40 puntos críticos para asegurar la superación del examen oficial.</p>
+<div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
 <!-- Card 6 -->
-<div class="group bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-500 cursor-default">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-6 group-hover:scale-110 transition-transform block">tire_repair</span>
-<h3 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-wide">Neumáticos</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Montaje, equilibrado de precisión y alineación láser para optimizar el desgaste y la adherencia.</p>
-<div class="h-[1px] w-8 bg-primary-container group-hover:w-full transition-all duration-500"></div>
+<div style="background:#201f1f;padding:40px;transition:background 0.5s;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">tire_repair</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Neumáticos</h3>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Montaje, equilibrado de precisión y alineación láser para optimizar el desgaste y la adherencia.</p>
+<div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
 </div>
 </div>
 </section>
 <!-- About Section -->
-<section class="py-24 bg-surface-container-low overflow-hidden">
-<div class="max-w-7xl mx-auto px-8">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="relative order-2 lg:order-1">
-<div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-primary-container opacity-50"></div>
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" data-alt="professional automotive technician in clean uniform inspecting a high-tech car component in a modern, well-lit workshop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi2xxQKI69CckJkKhT7qICo7hL4x0F7jyYtPvDx72KtunPQKag3LuDQtmC8t4WQPipr1tHaEpfQ8U5JH5MW0CbscJsSIGm_fw4NMdHSdYQOKovLBtVFMGSNRqOOKKu3KNTQNk_HnyQ3_xunsm61_mO1oWckUdulQZWRkFL9Gt0oBX92ydEWtj2PiCJT08SGjinqSFxHICbSdjPMWLnNRa10ufQsQ2aaftWGxuI3EQ13AadPVptMJmjMKMp3iQExKzMACjkrm9iwPQ"/>
-<div class="absolute -bottom-6 -right-6 bg-primary-container p-8 hidden md:block">
-<p class="text-white font-headline font-bold text-xl uppercase leading-tight tracking-tighter">Pasión por la<br/>Excelencia</p>
+<section style="padding:96px 0;background:#1c1b1b;overflow:hidden;">
+<div style="max-width:1280px;margin:0 auto;padding:0 32px;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="grid-auto">
+<div style="position:relative;">
+<div style="position:absolute;top:-24px;left:-24px;width:128px;height:128px;border-top:2px solid #F5A623;border-left:2px solid #F5A623;opacity:0.5;"></div>
+<img style="width:100%;filter:grayscale(1);box-shadow:0 25px 50px rgba(0,0,0,0.5);" alt="Mecánico profesional AutoMarcos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi2xxQKI69CckJkKhT7qICo7hL4x0F7jyYtPvDx72KtunPQKag3LuDQtmC8t4WQPipr1tHaEpfQ8U5JH5MW0CbscJsSIGm_fw4NMdHSdYQOKovLBtVFMGSNRqOOKKu3KNTQNk_HnyQ3_xunsm61_mO1oWckUdulQZWRkFL9Gt0oBX92ydEWtj2PiCJT08SGjinqSFxHICbSdjPMWLnNRa10ufQsQ2aaftWGxuI3EQ13AadPVptMJmjMKMp3iQExKzMACjkrm9iwPQ"/>
+<div style="position:absolute;bottom:-24px;right:-24px;background:#F5A623;padding:32px;display:none;" class="about-badge">
+<p style="color:#0D0D0D;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.25rem;text-transform:uppercase;line-height:1.2;letter-spacing:-0.02em;">Pasión por la<br/>Excelencia</p>
 </div>
 </div>
-<div class="order-1 lg:order-2">
-<p class="font-label text-primary tracking-[0.3em] uppercase mb-2 text-xs font-bold">Nuestra Trayectoria</p>
-<h2 class="font-headline text-4xl font-black text-white uppercase tracking-tight mb-8">HISTORIA DE UN TALLER DE CONFIANZA</h2>
-<div class="space-y-6 text-on-surface-variant text-lg font-light leading-relaxed">
+<div>
+<p style="font-family:'Oswald',sans-serif;color:#F5A623;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:8px;font-size:0.75rem;font-weight:700;">Nuestra Trayectoria</p>
+<h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:32px;">HISTORIA DE UN TALLER DE CONFIANZA</h2>
+<div style="display:flex;flex-direction:column;gap:24px;color:rgba(255,255,255,0.6);font-size:1.1rem;font-weight:300;line-height:1.6;">
 <p>Fundado en 1980 bajo la premisa de que la mecánica es un arte de precisión, Talleres AutoMarcos ha evolucionado durante más de cuatro décadas hasta convertirse en un referente en Mallorca.</p>
 <p>No somos solo un taller; somos un laboratorio de ingeniería donde cada vehículo recibe un trato personalizado. Nuestra filosofía se basa en la honestidad radical: explicamos cada reparación y ofrecemos soluciones eficientes sin costes ocultos.</p>
 <p>Contamos con maquinaria de última generación para diagnosticar incluso los problemas más complejos en vehículos modernos e híbridos.</p>
@@ -176,160 +192,234 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </div>
 </section>
 <!-- Quality Section -->
-<section class="py-24 px-8 bg-surface">
-<div class="max-w-7xl mx-auto text-center mb-16">
-<h2 class="font-headline text-4xl font-black text-white uppercase tracking-tight">CALIDAD GARANTIZADA</h2>
-<div class="h-1 w-24 bg-primary-container mx-auto mt-4"></div>
+<section style="padding:96px 32px;background:#131313;">
+<div style="max-width:1280px;margin:0 auto;text-align:center;margin-bottom:64px;">
+<h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;">CALIDAD GARANTIZADA</h2>
+<div style="height:4px;width:96px;background:#F5A623;margin:16px auto 0;"></div>
 </div>
-<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="p-8 bg-surface-container-highest border-b-4 border-primary-container">
-<p class="font-headline text-4xl font-bold text-white/10 mb-2">01</p>
-<h4 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-widest">Experiencia</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed">Personal altamente cualificado con formación continua en las nuevas tecnologías del sector automotriz.</p>
+<div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;" class="grid-auto">
+<div style="padding:32px;background:#353534;border-bottom:4px solid #F5A623;">
+<p style="font-family:'Oswald',sans-serif;font-size:2.25rem;font-weight:700;color:rgba(255,255,255,0.1);margin-bottom:8px;">01</p>
+<h4 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Experiencia</h4>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;">Personal altamente cualificado con formación continua en las nuevas tecnologías del sector automotriz.</p>
 </div>
-<div class="p-8 bg-surface-container-highest border-b-4 border-primary-container">
-<p class="font-headline text-4xl font-bold text-white/10 mb-2">02</p>
-<h4 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-widest">Honestidad</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed">Transparencia total en presupuestos y plazos. Solo reparamos lo que realmente necesita su vehículo.</p>
+<div style="padding:32px;background:#353534;border-bottom:4px solid #F5A623;">
+<p style="font-family:'Oswald',sans-serif;font-size:2.25rem;font-weight:700;color:rgba(255,255,255,0.1);margin-bottom:8px;">02</p>
+<h4 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Honestidad</h4>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;">Transparencia total en presupuestos y plazos. Solo reparamos lo que realmente necesita su vehículo.</p>
 </div>
-<div class="p-8 bg-surface-container-highest border-b-4 border-primary-container">
-<p class="font-headline text-4xl font-bold text-white/10 mb-2">03</p>
-<h4 class="font-headline text-xl font-bold text-white mb-4 uppercase tracking-widest">Tecnología</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed">Equipamiento de diagnosis digital y herramientas de alta precisión para resultados óptimos.</p>
+<div style="padding:32px;background:#353534;border-bottom:4px solid #F5A623;">
+<p style="font-family:'Oswald',sans-serif;font-size:2.25rem;font-weight:700;color:rgba(255,255,255,0.1);margin-bottom:8px;">03</p>
+<h4 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Tecnología</h4>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;">Equipamiento de diagnosis digital y herramientas de alta precisión para resultados óptimos.</p>
 </div>
 </div>
 </section>
 <!-- Testimonials Section -->
-<section class="py-24 bg-surface-container-low px-8">
-<div class="mx-auto max-w-7xl">
-<div class="text-center mb-16">
-<p class="font-label text-primary tracking-[0.3em] uppercase mb-2 text-xs font-bold">Feedback</p>
-<h2 class="font-headline text-4xl font-black text-white uppercase tracking-tight">LO QUE DICEN NUESTROS CLIENTES</h2>
+<section style="padding:96px 32px;background:#1c1b1b;">
+<div style="max-width:1280px;margin:0 auto;">
+<div style="text-align:center;margin-bottom:64px;">
+<p style="font-family:'Oswald',sans-serif;color:#F5A623;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:8px;font-size:0.75rem;font-weight:700;">Feedback</p>
+<h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;">LO QUE DICEN NUESTROS CLIENTES</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="bg-surface p-10 relative">
-<span class="material-symbols-outlined text-primary-container/20 text-7xl absolute top-4 right-4">format_quote</span>
-<div class="flex gap-1 text-primary-container mb-4">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="text-on-surface italic mb-6 leading-relaxed">"Excelente trato y profesionalidad. Lleve mi coche por un problema eléctrico que en otros talleres no daban con él y aquí lo solucionaron en un día. Muy recomendables."</p>
-<p class="text-white font-headline font-bold uppercase tracking-widest text-sm">— Carlos Méndez</p>
-</div>
-<div class="bg-surface p-10 relative">
-<span class="material-symbols-outlined text-primary-container/20 text-7xl absolute top-4 right-4">format_quote</span>
-<div class="flex gap-1 text-primary-container mb-4">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="grid-auto">
+<div style="background:#131313;padding:40px;position:relative;">
+<span class="material-symbols-outlined" style="color:rgba(245,166,35,0.2);font-size:4.5rem;position:absolute;top:16px;right:16px;">format_quote</span>
+<div style="display:flex;gap:4px;color:#F5A623;margin-bottom:16px;">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-on-surface italic mb-6 leading-relaxed">"He sido cliente de AutoMarcos durante años. La confianza que me dan es inigualable. Siempre honestos con el presupuesto y el coche queda impecable."</p>
-<p class="text-white font-headline font-bold uppercase tracking-widest text-sm">— Elena Rodriguez</p>
+<p style="color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:24px;line-height:1.6;">"Excelente trato y profesionalidad. Lleve mi coche por un problema eléctrico que en otros talleres no daban con él y aquí lo solucionaron en un día. Muy recomendables."</p>
+<p style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.85rem;">— Carlos Méndez</p>
 </div>
+<div style="background:#131313;padding:40px;position:relative;">
+<span class="material-symbols-outlined" style="color:rgba(245,166,35,0.2);font-size:4.5rem;position:absolute;top:16px;right:16px;">format_quote</span>
+<div style="display:flex;gap:4px;color:#F5A623;margin-bottom:16px;">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p style="color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:24px;line-height:1.6;">"He sido cliente de AutoMarcos durante años. La confianza que me dan es inigualable. Siempre honestos con el presupuesto y el coche queda impecable."</p>
+<p style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.85rem;">— Elena Rodriguez</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section style="padding:96px 32px;background:#131313;">
+<div style="max-width:1280px;margin:0 auto;">
+<div style="text-align:center;margin-bottom:64px;">
+<p style="font-family:'Oswald',sans-serif;color:#F5A623;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:8px;font-size:0.75rem;font-weight:700;">Últimos artículos</p>
+<h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;">BLOG</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;" class="grid-auto">
+<!-- Blog Card 1 -->
+<a href={`${base}/blog/cuando-cambiar-aceite-coche`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
+<div style="aspect-ratio:16/9;overflow:hidden;">
+<img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80" alt="Cuándo cambiar el aceite del coche" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+</div>
+<div style="padding:24px;">
+<span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">Mantenimiento</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin:12px 0 8px;text-transform:uppercase;">Cuándo cambiar el aceite del coche</h3>
+<p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.5;">Descubre cada cuántos kilómetros debes cambiar el aceite y por qué es tan importante para el motor.</p>
+<span style="display:inline-block;margin-top:12px;color:#F5A623;font-size:0.85rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;">Leer más →</span>
+</div>
+</a>
+<!-- Blog Card 2 -->
+<a href={`${base}/blog/preparar-coche-itv`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
+<div style="aspect-ratio:16/9;overflow:hidden;">
+<img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80" alt="Cómo preparar tu coche para la ITV" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+</div>
+<div style="padding:24px;">
+<span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">ITV</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin:12px 0 8px;text-transform:uppercase;">Cómo preparar tu coche para la ITV</h3>
+<p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.5;">Guía completa con todos los puntos que debes revisar antes de la inspección técnica.</p>
+<span style="display:inline-block;margin-top:12px;color:#F5A623;font-size:0.85rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;">Leer más →</span>
+</div>
+</a>
+<!-- Blog Card 3 -->
+<a href={`${base}/blog/senales-cambiar-frenos`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
+<div style="aspect-ratio:16/9;overflow:hidden;">
+<img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80" alt="5 señales de que tus frenos necesitan revisión" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+</div>
+<div style="padding:24px;">
+<span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">Seguridad</span>
+<h3 style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin:12px 0 8px;text-transform:uppercase;">5 señales de que tus frenos necesitan revisión</h3>
+<p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.5;">Aprende a identificar los síntomas de desgaste en el sistema de frenado.</p>
+<span style="display:inline-block;margin-top:12px;color:#F5A623;font-size:0.85rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;">Leer más →</span>
+</div>
+</a>
 </div>
 </div>
 </section>
 <!-- Booking CTA -->
-<section class="py-24 relative overflow-hidden bg-primary-container">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-primary-container/90 mix-blend-multiply"></div>
-<img class="w-full h-full object-cover grayscale opacity-20" data-alt="abstract close-up of a high-performance car headlight and grille with sharp lines and dark reflective surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoRdf21AHXIVHp-FcnoifiOo4W46RRMvGW6vypFLnn4ekegnFtJiHBS9Y-dDSeKNhkW_NAhl0o1uHeAkHFj7byevDbGdA6IXhpb9FdYNR1k9k2pJ1YwlRxVF4TuBYXZLEvlmAbT4nFP_xG7M1LdDmRVjejp1jhfNF6KBk92PmTjN82TAiD0lf7rQsY1EQWhk-PBowSWeNpCZUMbaVi7-HnoQn6jo7u-P3u0Xz7-n37IMeYkFk_rJwT9Gmw0meZyQTHyyWXgPg6hHM"/>
+<section style="padding:96px 0;position:relative;overflow:hidden;background:#F5A623;">
+<div style="position:absolute;inset:0;z-index:0;">
+<div style="position:absolute;inset:0;background:rgba(245,166,35,0.9);mix-blend-mode:multiply;"></div>
+<img style="width:100%;height:100%;object-fit:cover;filter:grayscale(1);opacity:0.2;" alt="AutoMarcos taller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoRdf21AHXIVHp-FcnoifiOo4W46RRMvGW6vypFLnn4ekegnFtJiHBS9Y-dDSeKNhkW_NAhl0o1uHeAkHFj7byevDbGdA6IXhpb9FdYNR1k9k2pJ1YwlRxVF4TuBYXZLEvlmAbT4nFP_xG7M1LdDmRVjejp1jhfNF6KBk92PmTjN82TAiD0lf7rQsY1EQWhk-PBowSWeNpCZUMbaVi7-HnoQn6jo7u-P3u0Xz7-n37IMeYkFk_rJwT9Gmw0meZyQTHyyWXgPg6hHM"/>
 </div>
-<div class="relative z-10 max-w-4xl mx-auto px-8 text-center">
-<h2 class="font-headline text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6">¿NECESITAS UNA REVISIÓN?</h2>
-<p class="text-white/80 text-lg mb-12 font-light max-w-2xl mx-auto">
-                No esperes a que sea tarde. Agenda hoy mismo tu cita por WhatsApp y recibe asesoramiento técnico inmediato.
-            </p>
-<a href="https://wa.me/34623942526?text=Hola%2C%20quiero%20pedir%20cita" target="_blank" rel="noopener" class="bg-white text-primary-container px-12 py-5 font-headline font-black uppercase tracking-[0.2em] text-lg rounded-sm hover:scale-105 transition-all shadow-xl inline-flex items-center gap-4 mx-auto group">
+<div style="position:relative;z-index:10;max-width:896px;margin:0 auto;padding:0 32px;text-align:center;">
+<h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#0D0D0D;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:24px;">¿NECESITAS UNA REVISIÓN?</h2>
+<p style="color:rgba(13,13,13,0.8);font-size:1.1rem;margin-bottom:48px;font-weight:300;max-width:640px;margin-left:auto;margin-right:auto;">
+  No esperes a que sea tarde. Agenda hoy mismo tu cita por WhatsApp y recibe asesoramiento técnico inmediato.
+</p>
+<a href="https://wa.me/34623942526?text=Hola%2C%20quiero%20pedir%20cita" target="_blank" rel="noopener" style="background:#0D0D0D;color:#F5A623;padding:20px 48px;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;font-size:1.1rem;text-decoration:none;border-radius:2px;display:inline-flex;align-items:center;gap:16px;">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
-                ESCRÍBENOS POR WHATSAPP
-            </a>
+  ESCRÍBENOS POR WHATSAPP
+</a>
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-[#131313] w-full pt-16 pb-8 border-t border-white/5">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto font-['Inter'] text-sm leading-relaxed">
-<div class="space-y-6">
-<div class="text-xl font-bold text-white font-headline uppercase tracking-tighter">AutoMarcos</div>
-<p class="text-white/50 max-w-xs">Especialistas en mecánica de alta precisión y mantenimiento integral en Mallorca. Más de 44 años cuidando su seguridad.</p>
-<div class="flex gap-4">
-<a class="text-white/50 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-white/50 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-white/50 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">phone</span></a>
+<footer style="background:#131313;width:100%;padding:64px 0 32px;border-top:1px solid rgba(255,255,255,0.05);">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:48px;padding:0 32px;max-width:1280px;margin:0 auto;font-family:'Inter',sans-serif;font-size:0.9rem;line-height:1.6;" class="grid-auto">
+<div style="display:flex;flex-direction:column;gap:24px;">
+<div style="display:flex;align-items:center;gap:12px;">
+  <img src={`${base}/logo-automarcos.svg`} width="42" alt="AutoMarcos logo" style="display:inline-block" />
+  <span style="font-size:1.25rem;font-weight:700;color:#fff;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:-0.02em;">AutoMarcos</span>
+</div>
+<p style="color:rgba(255,255,255,0.5);max-width:300px;">Especialistas en mecánica de alta precisión y mantenimiento integral en Mallorca. Más de 44 años cuidando su seguridad.</p>
+<div style="display:flex;gap:16px;">
+<a style="color:rgba(255,255,255,0.5);" href="https://www.instagram.com/talleres_automarcos" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span></a>
+<a style="color:rgba(255,255,255,0.5);" href="tel:+34623942526"><span class="material-symbols-outlined">phone</span></a>
+<a style="color:rgba(255,255,255,0.5);" href="https://wa.me/34623942526" target="_blank" rel="noopener"><span class="material-symbols-outlined">chat</span></a>
 </div>
 </div>
-<div class="space-y-6">
-<h4 class="text-white font-headline font-bold uppercase tracking-widest text-xs">Servicios</h4>
-<ul class="space-y-3 text-white/50">
-<li><a class="hover:text-white transition-colors" href="#">Mecánica General</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Electricidad del Automóvil</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Mantenimiento Preventivo</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Inspección ITV</a></li>
+<div style="display:flex;flex-direction:column;gap:24px;">
+<h4 style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem;">Servicios</h4>
+<ul style="display:flex;flex-direction:column;gap:12px;color:rgba(255,255,255,0.5);list-style:none;padding:0;margin:0;">
+<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Mecánica General</a></li>
+<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Electricidad del Automóvil</a></li>
+<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Mantenimiento Preventivo</a></li>
+<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Inspección ITV</a></li>
 </ul>
 </div>
-<div class="space-y-6">
-<h4 class="text-white font-headline font-bold uppercase tracking-widest text-xs">Ubicación</h4>
-<ul class="space-y-3 text-white/50">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary-container text-sm">location_on</span>
-<span>Carrer del Motor, 45<br/>07011 Palma, Illes Balears</span>
+<div style="display:flex;flex-direction:column;gap:24px;">
+<h4 style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem;">Ubicación</h4>
+<ul style="display:flex;flex-direction:column;gap:12px;color:rgba(255,255,255,0.5);list-style:none;padding:0;margin:0;">
+<li style="display:flex;align-items:flex-start;gap:8px;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:1rem;">location_on</span>
+<span>Carrer de Sant Joaquim, 25<br/>Mallorca</span>
 </li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container text-sm">schedule</span>
-<span>Lun - Vie: 08:30 - 18:30</span>
+<li style="display:flex;align-items:center;gap:8px;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:1rem;">schedule</span>
+<span>Lunes a Sábado: 09:00 - 16:00</span>
 </li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container text-sm">phone_iphone</span>
-<span>+34 623 942 526</span>
+<li style="display:flex;align-items:center;gap:8px;">
+<span class="material-symbols-outlined" style="color:#F5A623;font-size:1rem;">phone_iphone</span>
+<a href="tel:+34623942526" style="color:inherit;text-decoration:none;">623 94 25 26</a>
 </li>
 </ul>
 </div>
-<div class="space-y-6">
-<h4 class="text-white font-headline font-bold uppercase tracking-widest text-xs">Newsletter</h4>
-<p class="text-white/50">Recibe consejos de mantenimiento y ofertas exclusivas.</p>
-<div class="flex gap-2">
-<input class="bg-surface-container-lowest border-white/10 text-white placeholder:text-white/20 focus:border-primary-container focus:ring-0 w-full rounded-sm text-sm" placeholder="Tu Email" type="email"/>
-<button class="bg-primary-container text-white p-2 px-4 rounded-sm hover:brightness-110 transition-all">
-<span class="material-symbols-outlined">send</span>
-</button>
+<div style="display:flex;flex-direction:column;gap:24px;">
+<h4 style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem;">Síguenos</h4>
+<p style="color:rgba(255,255,255,0.5);">Síguenos en Instagram para ver nuestro trabajo y ofertas.</p>
+<a href="https://www.instagram.com/talleres_automarcos" target="_blank" rel="noopener" style="color:#F5A623;text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;">@talleres_automarcos</a>
 </div>
 </div>
-</div>
-<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-white/50 text-xs">© 2024 Talleres AutoMarcos. Precision Engineering.</p>
-<div class="flex gap-6">
-<a class="text-white/50 hover:text-white transition-colors text-xs" href="#">Privacidad</a>
-<a class="text-white/50 hover:text-white transition-colors text-xs" href="#">Aviso Legal</a>
-<a class="text-white/50 hover:text-white transition-colors text-xs" href="#">Cookies</a>
+<div style="max-width:1280px;margin:0 auto;padding:0 32px;margin-top:64px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+<p style="color:rgba(255,255,255,0.5);font-size:0.75rem;">© 2024 Talleres AutoMarcos. Todos los derechos reservados.</p>
+<div style="display:flex;gap:24px;">
+<a style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;" href="#">Privacidad</a>
+<a style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;" href="#">Aviso Legal</a>
+<a style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;" href="#">Cookies</a>
 </div>
 </div>
 </footer>
 
 <!-- Mobile sticky CTA -->
 <div class="mobile-sticky-cta fixed bottom-0 left-0 right-0 z-[999]">
-  <a href="tel:+34623942526" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:#c0392b;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">
+  <a href="tel:+34623942526" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:#F5A623;color:#0D0D0D;font-family:'Oswald',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">
     <svg style="width:18px;height:18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
     Llamar
   </a>
-  <a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:#06c85d;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">
+  <a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:#25d366;color:#fff;font-family:'Oswald',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">
     <svg style="width:18px;height:18px;" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
 </div>
 <!-- WhatsApp floating button (desktop) -->
-<a href="https://wa.me/34623942526" target="_blank" rel="noopener" class="hidden md:flex fixed bottom-6 right-6 z-[999] w-14 h-14 rounded-full items-center justify-content-center shadow-lg hover:scale-110 transition-transform" style="background:#06c85d;align-items:center;justify-content:center;" aria-label="WhatsApp">
+<a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.5);text-decoration:none;" class="whatsapp-desktop" aria-label="WhatsApp">
   <svg style="width:30px;height:30px;color:#fff;" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<style>
+  @media (max-width: 767px) {
+    #desktop-nav-home { display: none !important; }
+    #mobile-menu-btn-home { display: block !important; }
+    .whatsapp-desktop { display: none !important; }
+    .about-badge { display: none !important; }
+  }
+  @media (min-width: 768px) {
+    .about-badge { display: block !important; }
+  }
+</style>
+
 <script>
   // Mobile menu toggle
-  document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
-    var menu = document.getElementById('mobile-dropdown');
-    if (menu) menu.classList.toggle('open');
-  });
+  const btn = document.getElementById('mobile-menu-btn-home');
+  const dropdown = document.getElementById('mobile-dropdown-home');
+  if (btn && dropdown) {
+    btn.addEventListener('click', function() {
+      const isOpen = dropdown.style.display === 'flex';
+      dropdown.style.display = isOpen ? 'none' : 'flex';
+    });
+    // Close on link click
+    dropdown.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        dropdown.style.display = 'none';
+      });
+    });
+    // Close on click outside
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+        dropdown.style.display = 'none';
+      }
+    });
+  }
 </script>
 </html>

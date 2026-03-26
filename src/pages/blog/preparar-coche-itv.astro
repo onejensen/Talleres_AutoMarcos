@@ -1,62 +1,84 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Cómo preparar tu coche para pasar la ITV a la primera - Talleres AutoMarcos" description="Guía completa para preparar tu vehículo para la ITV. Todos los puntos a revisar para pasar la inspección técnica sin problemas.">
-  <article class="py-16 md:py-24 bg-darker">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="/blog" class="inline-flex items-center gap-2 text-accent hover:text-accent-dark transition-colors mb-8 text-sm font-medium">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+  <article style="padding:64px 0 96px;background:#080808;">
+    <div style="max-width:768px;margin:0 auto;padding:0 16px;">
+      <a href={`${base}/blog`} style="display:inline-flex;align-items:center;gap:8px;color:#F5A623;text-decoration:none;margin-bottom:32px;font-size:0.9rem;font-family:'Oswald',sans-serif;text-transform:uppercase;">
+        <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         Volver al blog
       </a>
 
-      <div class="mb-8">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">ITV</span>
-          <span class="text-xs text-gray-500">8 de marzo de 2026</span>
+      <div style="margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">ITV</span>
+          <span style="font-size:0.75rem;color:#6b7280;">8 de marzo de 2026</span>
         </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-6">Cómo preparar tu coche para pasar la ITV a la primera</h1>
-        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=900&q=80" alt="Inspección técnica de vehículo" class="w-full rounded-2xl aspect-video object-cover" />
+        <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:24px;">Cómo preparar tu coche para pasar la ITV a la primera</h1>
+        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=900&q=80" alt="Inspección técnica de vehículo" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover;" />
       </div>
 
-      <div class="prose prose-invert max-w-none space-y-6 text-gray-300 leading-relaxed">
-        <p class="text-lg">La <strong class="text-white">Inspección Técnica de Vehículos (ITV)</strong> es obligatoria en España y fundamental para garantizar la seguridad vial. Con una buena preparación, puedes evitar problemas y pasar la inspección a la primera.</p>
+      <div style="color:#d1d5db;line-height:1.8;font-size:1rem;">
+        <p style="font-size:1.1rem;margin-bottom:24px;">La <strong style="color:#fff;">Inspección Técnica de Vehículos (ITV)</strong> es obligatoria en España y fundamental para garantizar la seguridad vial. Cada año, miles de vehículos no superan la inspección por fallos que se podrían haber evitado con una revisión previa. Con una buena preparación, puedes evitar problemas, ahorrar tiempo y pasar la inspección a la primera.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">Puntos clave que revisan en la ITV</h2>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">¿Cuándo hay que pasar la ITV?</h2>
+        <p style="margin-bottom:16px;">La periodicidad depende de la antigüedad del vehículo:</p>
+        <ul style="list-style:disc;padding-left:24px;margin-bottom:24px;">
+          <li style="margin-bottom:8px;"><strong style="color:#fff;">Vehículos nuevos:</strong> primera ITV a los 4 años desde la matriculación.</li>
+          <li style="margin-bottom:8px;"><strong style="color:#fff;">De 4 a 10 años:</strong> cada 2 años.</li>
+          <li style="margin-bottom:8px;"><strong style="color:#fff;">Más de 10 años:</strong> cada año.</li>
+        </ul>
+        <p style="margin-bottom:24px;">Si tu vehículo es diésel y tiene más de 10 años, la inspección de emisiones es especialmente estricta, por lo que es aún más importante una revisión previa.</p>
 
-        <h3 class="text-xl font-semibold text-white mt-8 mb-3">1. Sistema de iluminación</h3>
-        <p>Todas las luces deben funcionar correctamente: faros delanteros (cortas y largas), intermitentes, luces de freno, luz de marcha atrás, antiniebla y matrícula. Comprueba también que los faros estén bien regulados y no estén amarillentos.</p>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">Puntos clave que revisan en la ITV</h2>
 
-        <h3 class="text-xl font-semibold text-white mt-8 mb-3">2. Sistema de frenado</h3>
-        <p>Los frenos son uno de los puntos más importantes. Se comprueba la eficacia de frenado, el desgaste de pastillas y discos, el nivel del líquido de frenos y el funcionamiento del freno de mano.</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;color:#fff;margin:32px 0 12px;">1. Sistema de iluminación</h3>
+        <p style="margin-bottom:16px;">Todas las luces deben funcionar correctamente: faros delanteros (cortas y largas), intermitentes, luces de freno, luz de marcha atrás, antiniebla trasera y matrícula. Comprueba también que los faros estén bien regulados y no estén amarillentos u opacos. Un kit de pulido de faros cuesta menos de 15 € y puede evitar un resultado desfavorable.</p>
 
-        <h3 class="text-xl font-semibold text-white mt-8 mb-3">3. Emisiones de gases</h3>
-        <p>El control de emisiones es estricto. Si tu coche echa humo o la luz del motor está encendida, es probable que no pase. Un buen mantenimiento del sistema de escape y el catalizador es fundamental.</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;color:#fff;margin:32px 0 12px;">2. Sistema de frenado</h3>
+        <p style="margin-bottom:16px;">Los frenos son uno de los puntos más importantes. Se comprueba la eficacia de frenado en un banco de rodillos, el desgaste de pastillas y discos, el nivel del líquido de frenos y el funcionamiento del freno de mano. Un desequilibrio entre el frenado del lado izquierdo y derecho superior al 30% es motivo de rechazo.</p>
 
-        <h3 class="text-xl font-semibold text-white mt-8 mb-3">4. Neumáticos</h3>
-        <p>La profundidad mínima del dibujo debe ser de 1,6 mm, aunque se recomienda al menos 3 mm. Los neumáticos no deben tener deformaciones, cortes ni desgaste irregular. Los cuatro neumáticos de un mismo eje deben ser iguales.</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;color:#fff;margin:32px 0 12px;">3. Emisiones de gases</h3>
+        <p style="margin-bottom:16px;">El control de emisiones es cada vez más estricto. En los vehículos diésel se mide la opacidad del humo, y en los gasolina se analizan los gases de escape (CO, HC). Si tu coche echa humo o la luz del motor está encendida, es probable que no pase. Un buen mantenimiento del sistema de escape, el catalizador y el filtro de partículas es fundamental.</p>
 
-        <h3 class="text-xl font-semibold text-white mt-8 mb-3">5. Dirección y suspensión</h3>
-        <p>Se comprueba que no haya holguras en la dirección ni en los elementos de suspensión. Los amortiguadores deben estar en buen estado.</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;color:#fff;margin:32px 0 12px;">4. Neumáticos</h3>
+        <p style="margin-bottom:16px;">La profundidad mínima del dibujo debe ser de 1,6 mm, aunque se recomienda al menos 3 mm para una conducción segura. Los neumáticos no deben tener deformaciones, cortes, hernias ni desgaste irregular. Los cuatro neumáticos de un mismo eje deben ser de la misma medida y tipo. Aprovecha para comprobar que la presión es la correcta según el fabricante.</p>
 
-        <h3 class="text-xl font-semibold text-white mt-8 mb-3">6. Carrocería y chasis</h3>
-        <p>No debe haber óxido excesivo, elementos sueltos ni aristas cortantes. Los espejos retrovisores deben estar completos y en buen estado.</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;color:#fff;margin:32px 0 12px;">5. Dirección y suspensión</h3>
+        <p style="margin-bottom:16px;">Se comprueba que no haya holguras en la dirección, rótulas, bieletas ni silentblocks. Los amortiguadores deben estar en buen estado y no presentar fugas de aceite. Una suspensión desgastada no solo provoca rechazo en la ITV, sino que compromete seriamente la seguridad.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">Documentación necesaria</h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Permiso de circulación del vehículo.</li>
-          <li>Tarjeta de inspección técnica (ficha técnica).</li>
-          <li>Justificante del seguro en vigor.</li>
-          <li>DNI del titular o persona autorizada.</li>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;color:#fff;margin:32px 0 12px;">6. Carrocería y chasis</h3>
+        <p style="margin-bottom:16px;">No debe haber óxido excesivo que afecte a la estructura, elementos sueltos ni aristas cortantes que puedan causar daños a peatones. Los espejos retrovisores deben estar completos y en buen estado. La luna delantera no debe tener grietas en la zona de barrido del limpiaparabrisas.</p>
+
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">Checklist rápido antes de ir a la ITV</h2>
+        <ul style="list-style:disc;padding-left:24px;margin-bottom:24px;">
+          <li style="margin-bottom:8px;">Todas las luces funcionan correctamente.</li>
+          <li style="margin-bottom:8px;">Limpiaparabrisas en buen estado y con líquido.</li>
+          <li style="margin-bottom:8px;">Neumáticos con suficiente dibujo y sin daños visibles.</li>
+          <li style="margin-bottom:8px;">Freno de mano funcional.</li>
+          <li style="margin-bottom:8px;">No hay fugas visibles de aceite o líquidos.</li>
+          <li style="margin-bottom:8px;">Cinturones de seguridad se enganchen y retraigan bien.</li>
+          <li style="margin-bottom:8px;">Claxon funciona.</li>
+          <li style="margin-bottom:8px;">No hay testigos de avería encendidos en el cuadro.</li>
         </ul>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4">Nuestro servicio de pre-ITV</h2>
-        <p>En <strong class="text-white">Talleres AutoMarcos</strong> ofrecemos un servicio completo de pre-revisión ITV. Revisamos todos los puntos que se inspeccionan y solucionamos cualquier problema antes de que lleves tu coche a la estación ITV.</p>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">Documentación necesaria</h2>
+        <ul style="list-style:disc;padding-left:24px;margin-bottom:24px;">
+          <li style="margin-bottom:8px;">Permiso de circulación del vehículo.</li>
+          <li style="margin-bottom:8px;">Tarjeta de inspección técnica (ficha técnica).</li>
+          <li style="margin-bottom:8px;">Justificante del seguro en vigor.</li>
+          <li style="margin-bottom:8px;">DNI del titular o persona autorizada.</li>
+        </ul>
 
-        <div class="mt-10 bg-surface rounded-2xl p-8 border border-gray-800 text-center">
-          <h3 class="text-xl font-bold text-white mb-3">¿Te toca pasar la ITV?</h3>
-          <p class="text-gray-400 mb-6">Trae tu coche y lo dejamos listo para pasar sin problemas.</p>
-          <a href="https://wa.me/34600000000?text=Hola%2C%20necesito%20una%20pre-revisión%20ITV" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-colors">
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin:40px 0 16px;text-transform:uppercase;">Nuestro servicio de pre-ITV</h2>
+        <p style="margin-bottom:24px;">En <strong style="color:#fff;">Talleres AutoMarcos</strong> ofrecemos un servicio completo de pre-revisión ITV donde repasamos más de 40 puntos de inspección. Revisamos luces, frenos, suspensión, dirección, emisiones, neumáticos y todos los elementos que se comprueban en la estación ITV. Si detectamos algún problema, lo solucionamos antes de que lleves tu coche a la inspección, ahorrándote tiempo, dinero y la molestia de tener que volver.</p>
+
+        <div style="margin-top:40px;background:#161616;border-radius:16px;padding:32px;border:1px solid #222;text-align:center;">
+          <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:12px;">¿Te toca pasar la ITV?</h3>
+          <p style="color:#9ca3af;margin-bottom:24px;">Trae tu coche y lo dejamos listo para pasar sin problemas.</p>
+          <a href="https://wa.me/34623942526?text=Hola%2C%20necesito%20una%20pre-revisión%20ITV" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#25d366;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;">
             Pedir cita por WhatsApp
           </a>
         </div>

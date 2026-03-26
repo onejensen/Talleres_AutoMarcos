@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const posts = [
   {
@@ -30,28 +31,28 @@ const posts = [
 ---
 
 <Layout title="Blog - Talleres AutoMarcos" description="Blog de Talleres AutoMarcos: consejos de mantenimiento, guías para la ITV y todo lo que necesitas saber sobre el cuidado de tu vehículo.">
-  <section class="py-16 md:py-24 bg-darker">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Blog</h1>
-        <p class="text-gray-400 text-lg max-w-3xl mx-auto">Consejos, guías y todo lo que necesitas saber para mantener tu vehículo en las mejores condiciones.</p>
+  <section style="padding:64px 0 96px;background:#080808;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 16px;">
+      <div style="text-align:center;margin-bottom:64px;">
+        <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:16px;">Blog</h1>
+        <p style="color:#9ca3af;font-size:1.1rem;max-width:768px;margin:0 auto;">Consejos, guías y todo lo que necesitas saber para mantener tu vehículo en las mejores condiciones.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;" class="grid-auto">
         {posts.map((post) => (
-          <article class="bg-surface rounded-2xl overflow-hidden border border-gray-800 hover:border-accent/50 transition-colors group">
-            <a href={`/blog/${post.slug}`} class="block">
-              <div class="aspect-video overflow-hidden">
-                <img src={post.imagen} alt={post.titulo} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <article style="background:#161616;border-radius:2px;overflow:hidden;border:1px solid #222;">
+            <a href={`${base}/blog/${post.slug}`} style="display:block;text-decoration:none;">
+              <div style="aspect-ratio:16/9;overflow:hidden;">
+                <img src={post.imagen} alt={post.titulo} loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
               </div>
-              <div class="p-6">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">{post.categoria}</span>
-                  <span class="text-xs text-gray-500">{post.fecha}</span>
+              <div style="padding:24px;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                  <span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">{post.categoria}</span>
+                  <span style="font-size:0.75rem;color:#6b7280;">{post.fecha}</span>
                 </div>
-                <h2 class="text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">{post.titulo}</h2>
-                <p class="text-gray-400 text-sm leading-relaxed">{post.resumen}</p>
-                <span class="inline-block mt-4 text-accent text-sm font-medium">Leer más &rarr;</span>
+                <h2 style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:8px;">{post.titulo}</h2>
+                <p style="color:#9ca3af;font-size:0.9rem;line-height:1.5;">{post.resumen}</p>
+                <span style="display:inline-block;margin-top:16px;color:#F5A623;font-size:0.85rem;font-family:'Oswald',sans-serif;text-transform:uppercase;">Leer más →</span>
               </div>
             </a>
           </article>
