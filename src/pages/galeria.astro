@@ -1,17 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
 
-const imagenes = [
-  { src: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&q=80', alt: 'Mecánico trabajando en motor' },
-  { src: 'https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80', alt: 'Interior del taller mecánico' },
-  { src: 'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80', alt: 'Reparación de frenos' },
-  { src: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80', alt: 'Diagnóstico electrónico del vehículo' },
-  { src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80', alt: 'Coche en el taller' },
-  { src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80', alt: 'Vehículo reparado' },
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80', alt: 'Herramientas del taller' },
-  { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80', alt: 'Coche deportivo' },
-  { src: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80', alt: 'Trabajo de mecánica' },
-];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const galeriaDir = path.join(process.cwd(), 'public', 'galeria');
+const archivos = fs.existsSync(galeriaDir)
+  ? fs.readdirSync(galeriaDir).filter(f => /\.(jpe?g|png|webp)$/i.test(f)).sort()
+  : [];
+
+const imagenes = archivos.map(f => ({
+  src: `${base}/galeria/${f}`,
+  alt: f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
+}));
 ---
 
 <Layout title="Galería - Talleres AutoMarcos" description="Galería de fotos de Talleres AutoMarcos. Conoce nuestras instalaciones y nuestro trabajo en Mallorca.">
