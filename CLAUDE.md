@@ -40,18 +40,22 @@ Base path is `/Talleres_AutoMarcos`. All asset references and internal links mus
 
 ### Pages
 
-- `index.astro` — Homepage with hero, services overview, about section, quality, testimonials, blog preview, WhatsApp CTA
+- `index.astro` — Homepage with hero, services overview, about section, quality, testimonials, blog preview, WhatsApp CTA. All images are local from `public/galeria/`.
 - `servicios.astro` — Detailed service listings with SVG icons
 - `galeria.astro` — Photo gallery with lightbox (reads images dynamically from `public/galeria/`)
-- `contacto.astro` — Contact form (sends to WhatsApp), phone, Google Maps link, Instagram button
+- `contacto.astro` — Contact form (sends to WhatsApp), phone call link, Google Maps button ("Cómo ir"), Instagram button
 - `blog/` — Blog section with article pages (SEO-oriented content about car maintenance)
 
 ### Key Implementation Details
 
 - **Gallery**: `galeria.astro` uses `fs.readdirSync` to auto-load all `.jpg/.png/.webp` from `public/galeria/`. Just drop images there.
-- **Contact form**: Submits via JavaScript — builds a WhatsApp message with name, phone, vehicle, and message fields, then opens `wa.me` link.
+- **Contact form**: Submits via JavaScript — builds a WhatsApp message with name, phone, vehicle make/model, and message fields, then opens `wa.me` link.
 - **Subpages** use `padding-top: 120px` to clear the fixed nav. The index uses `min-h-screen` + `pt-20` for its hero instead.
 - **Logo**: `public/logo-automarcos.png` — used in nav (64px), hero (160px), and footer (42px).
+- **Favicon**: `public/favicon.png` — custom AutoMarcos icon.
+- **Social sharing image**: `public/og-image.jpg` — referenced via `og:image` meta tag in Layout.
+- **Images**: All images on the site are local (no external URLs). Homepage images reference files in `public/galeria/` (e.g., `excelencia.jpg`, `frenos.jpg`).
+- **Assets folder**: `assets/` at project root contains source files (favicon, social image) that get copied to `public/` when updated.
 
 ### Styling Approach
 
@@ -60,7 +64,7 @@ Hybrid model: Tailwind utility classes mixed with inline styles and custom CSS i
 - **Color scheme**: Dark backgrounds (`#0D0D0D`, `#131313`, `#161616`) with amber/orange accent (`#F5A623`) and green for WhatsApp (`#25d366`)
 - **Typography**: Oswald (headlines, nav, labels — uppercase) + Inter (body text)
 - **Sharp corners only** — `rounded-sm` (2px) max, no pills or large radii
-- **No grain overlay** — was removed per user preference
+- **No grain overlay** — removed per user preference
 
 ### Design System
 
