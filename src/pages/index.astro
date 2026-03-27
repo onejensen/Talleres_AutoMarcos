@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <!-- Hero Section -->
 <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover scale-105 brightness-[0.4]" alt="Taller mecánico profesional AutoMarcos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_sWIsUhtjDQU26e5QHOtlj4lHkUm7B-nNINn7c2Mu9qAEEKxkTxhXc8j0NQPLkqg_QdFE2MMzo371i7-S-jTLrfbX4RpBx4lgQs0FIQ3QjirkT5wiOhZEH5m7ZUb46CQ44RuyrSg5kEwukcNIHcaFmwwunSmZGBDW9qw_4CAwXYhGEBTf1q1mxyeD8Suxqwv_puw3USsU1Xd1nH2Yq36h0Jq4pcHeDq_RMiRDeLKxSq8NqIElsJPdvobM0UQQhq0T3BjpfzRwzc"/>
+<img class="w-full h-full object-cover scale-105 brightness-[0.4]" alt="Taller mecánico profesional AutoMarcos" src={`${base}/galeria/IMG-20250412-WA0008.jpg`}/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
 </div>
 <div class="relative z-10 px-8 md:px-16 max-w-5xl">
@@ -87,7 +87,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="grid-auto">
 <div style="position:relative;">
 <div style="position:absolute;top:-24px;left:-24px;width:128px;height:128px;border-top:2px solid #F5A623;border-left:2px solid #F5A623;opacity:0.5;"></div>
-<img style="width:100%;filter:grayscale(1);box-shadow:0 25px 50px rgba(0,0,0,0.5);" alt="Mecánico profesional AutoMarcos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi2xxQKI69CckJkKhT7qICo7hL4x0F7jyYtPvDx72KtunPQKag3LuDQtmC8t4WQPipr1tHaEpfQ8U5JH5MW0CbscJsSIGm_fw4NMdHSdYQOKovLBtVFMGSNRqOOKKu3KNTQNk_HnyQ3_xunsm61_mO1oWckUdulQZWRkFL9Gt0oBX92ydEWtj2PiCJT08SGjinqSFxHICbSdjPMWLnNRa10ufQsQ2aaftWGxuI3EQ13AadPVptMJmjMKMp3iQExKzMACjkrm9iwPQ"/>
+<img style="width:100%;filter:grayscale(1);box-shadow:0 25px 50px rgba(0,0,0,0.5);" alt="Mecánico profesional AutoMarcos" src={`${base}/galeria/IMG_20210607_172937.jpg`}/>
 <div style="position:absolute;bottom:-24px;right:-24px;background:#F5A623;padding:32px;" class="about-badge">
 <p style="color:#0D0D0D;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.25rem;text-transform:uppercase;line-height:1.2;letter-spacing:-0.02em;">Pasión por la<br/>Excelencia</p>
 </div>
@@ -176,7 +176,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;" class="grid-auto">
 <a href={`${base}/blog/cuando-cambiar-aceite-coche`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
 <div style="aspect-ratio:16/9;overflow:hidden;">
-<img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80" alt="Cuándo cambiar el aceite del coche" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+<img src={`${base}/galeria/IMG_20221004_171415.jpg`} alt="Cuándo cambiar el aceite del coche" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
 </div>
 <div style="padding:24px;">
 <span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">Mantenimiento</span>
@@ -187,7 +187,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 </a>
 <a href={`${base}/blog/preparar-coche-itv`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
 <div style="aspect-ratio:16/9;overflow:hidden;">
-<img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80" alt="Cómo preparar tu coche para la ITV" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+<img src={`${base}/galeria/IMG_20201124_134649.jpg`} alt="Cómo preparar tu coche para la ITV" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
 </div>
 <div style="padding:24px;">
 <span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">ITV</span>
@@ -198,7 +198,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 </a>
 <a href={`${base}/blog/senales-cambiar-frenos`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
 <div style="aspect-ratio:16/9;overflow:hidden;">
-<img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80" alt="5 señales de que tus frenos necesitan revisión" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+<img src={`${base}/galeria/IMG_20250129_160432.jpg`} alt="5 señales de que tus frenos necesitan revisión" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
 </div>
 <div style="padding:24px;">
 <span style="font-size:0.75rem;font-weight:600;color:#F5A623;background:rgba(245,166,35,0.1);padding:4px 12px;border-radius:2px;">Seguridad</span>
@@ -215,7 +215,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <section style="padding:96px 0;position:relative;overflow:hidden;background:#F5A623;">
 <div style="position:absolute;inset:0;z-index:0;">
 <div style="position:absolute;inset:0;background:rgba(245,166,35,0.9);mix-blend-mode:multiply;"></div>
-<img style="width:100%;height:100%;object-fit:cover;filter:grayscale(1);opacity:0.2;" alt="AutoMarcos taller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoRdf21AHXIVHp-FcnoifiOo4W46RRMvGW6vypFLnn4ekegnFtJiHBS9Y-dDSeKNhkW_NAhl0o1uHeAkHFj7byevDbGdA6IXhpb9FdYNR1k9k2pJ1YwlRxVF4TuBYXZLEvlmAbT4nFP_xG7M1LdDmRVjejp1jhfNF6KBk92PmTjN82TAiD0lf7rQsY1EQWhk-PBowSWeNpCZUMbaVi7-HnoQn6jo7u-P3u0Xz7-n37IMeYkFk_rJwT9Gmw0meZyQTHyyWXgPg6hHM"/>
+<img style="width:100%;height:100%;object-fit:cover;filter:grayscale(1);opacity:0.2;" alt="AutoMarcos taller" src={`${base}/galeria/IMG_20210902_123545.jpg`}/>
 </div>
 <div style="position:relative;z-index:10;max-width:896px;margin:0 auto;padding:0 32px;text-align:center;">
 <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#0D0D0D;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:24px;">¿NECESITAS UNA REVISIÓN?</h2>
