@@ -1,58 +1,10 @@
 ---
-// AutoMarcos - Standalone homepage
-import "../styles/global.css";
-const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<!DOCTYPE html>
-<html class="dark" lang="es">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Talleres AutoMarcos - Taller mecánico de confianza en Mallorca. Más de 44 años de experiencia, honestidad y precisión."/>
-<meta property="og:title" content="AutoMarcos | Taller Mecánico Mallorca"/>
-<meta property="og:type" content="website"/>
-<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<title>AutoMarcos | Taller Mecánico Mallorca</title>
-</head>
+<Layout title="AutoMarcos | Taller Mecánico Mallorca" description="Talleres AutoMarcos - Taller mecánico de confianza en Mallorca. Más de 44 años de experiencia, honestidad y precisión.">
 
-<div class="fixed inset-0 grain-overlay z-[100]"></div>
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md border-b border-white/10 shadow-2xl">
-<div class="flex justify-between items-center px-8 py-4 max-w-none w-full">
-<a href={`${base}/`} style="display:flex;align-items:center;gap:12px;text-decoration:none;">
-  <img src={`${base}/logo-automarcos.svg`} width="64" alt="AutoMarcos logo" style="display:inline-block" />
-  <div>
-    <span style="font-size:1.5rem;font-weight:700;color:#fff;font-family:'Oswald',sans-serif;letter-spacing:-0.02em;">AutoMarcos</span>
-    <span style="display:block;font-size:0.7rem;color:#F5A623;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;">Taller Mecánico · Mallorca</span>
-  </div>
-</a>
-<div id="desktop-nav-home" style="display:flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:0.85rem;">
-<a style="color:#F5A623;font-weight:700;border-bottom:2px solid #F5A623;padding-bottom:4px;" href={`${base}/`}>Inicio</a>
-<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/servicios`}>Servicios</a>
-<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/galeria`}>Galería</a>
-<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/blog`}>Blog</a>
-<a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/contacto`}>Contacto</a>
-<div style="height:24px;width:1px;background:rgba(255,255,255,0.1);margin:0 8px;"></div>
-<a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="background:#F5A623;color:#0D0D0D;padding:8px 20px;font-weight:700;text-decoration:none;border-radius:2px;">Pedir Cita</a>
-</div>
-<button id="mobile-menu-btn-home" style="display:none;color:#fff;background:none;border:2px solid #F5A623;padding:6px 10px;cursor:pointer;border-radius:4px;" aria-label="Abrir menú">
-  <svg style="width:24px;height:24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
-</button>
-</div>
-<!-- Mobile dropdown -->
-<div id="mobile-dropdown-home" style="display:none;flex-direction:column;gap:4px;padding:0 8px 16px;">
-  <a href={`${base}/`} style="padding:12px 16px;color:#F5A623;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Inicio</a>
-  <a href={`${base}/servicios`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Servicios</a>
-  <a href={`${base}/galeria`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Galería</a>
-  <a href={`${base}/blog`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Blog</a>
-  <a href={`${base}/contacto`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Contacto</a>
-  <a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="margin-top:8px;padding:14px 24px;background:#F5A623;color:#0D0D0D;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-align:center;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Pedir Cita</a>
-</div>
-</nav>
 <!-- Hero Section -->
 <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
 <div class="absolute inset-0 z-0">
@@ -80,6 +32,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 <span style="font-family:'Oswald',sans-serif;font-size:15rem;font-weight:700;line-height:1;user-select:none;color:rgba(255,255,255,0.1);">MARCOS</span>
 </div>
 </header>
+
 <!-- Stats Banner -->
 <section style="background:#0e0e0e;padding:64px 0;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
 <div style="max-width:1280px;margin:0 auto;padding:0 32px;">
@@ -115,6 +68,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </div>
 </div>
 </section>
+
 <!-- Services Grid -->
 <section style="padding:96px 32px;background:#131313;">
 <div style="max-width:1280px;margin:0 auto;">
@@ -123,42 +77,36 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;">NUESTROS SERVICIOS</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;" class="grid-auto">
-<!-- Card 1 -->
 <div style="background:#201f1f;padding:40px;transition:background 0.5s;">
 <span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">reset_wrench</span>
 <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Mecánica General</h3>
 <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Diagnóstico avanzado y reparación integral de motores, transmisiones y sistemas de suspensión.</p>
 <div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
-<!-- Card 2 -->
 <div style="background:#201f1f;padding:40px;transition:background 0.5s;">
 <span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">bolt</span>
 <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Electricidad</h3>
 <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Sistemas electrónicos complejos, diagnosis OBD-II y mantenimiento de baterías de última generación.</p>
 <div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
-<!-- Card 3 -->
 <div style="background:#201f1f;padding:40px;transition:background 0.5s;">
 <span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">oil_barrel</span>
 <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Cambio de Aceite</h3>
 <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Lubricantes sintéticos de alto rendimiento y sustitución técnica de filtros según normativa OEM.</p>
 <div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
-<!-- Card 4 -->
 <div style="background:#201f1f;padding:40px;transition:background 0.5s;">
 <span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">sports_score</span>
 <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Sistemas de Frenos</h3>
 <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Rectificación de discos, sustitución de pastillas y purgado de sistemas hidráulicos ABS/ESP.</p>
 <div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
-<!-- Card 5 -->
 <div style="background:#201f1f;padding:40px;transition:background 0.5s;">
 <span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">verified</span>
 <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Pre-ITV</h3>
 <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:24px;">Inspección técnica exhaustiva de 40 puntos críticos para asegurar la superación del examen oficial.</p>
 <div style="height:1px;width:32px;background:#F5A623;"></div>
 </div>
-<!-- Card 6 -->
 <div style="background:#201f1f;padding:40px;transition:background 0.5s;">
 <span class="material-symbols-outlined" style="color:#F5A623;font-size:2.25rem;margin-bottom:24px;display:block;">tire_repair</span>
 <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Neumáticos</h3>
@@ -168,6 +116,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </div>
 </div>
 </section>
+
 <!-- About Section -->
 <section style="padding:96px 0;background:#1c1b1b;overflow:hidden;">
 <div style="max-width:1280px;margin:0 auto;padding:0 32px;">
@@ -175,7 +124,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 <div style="position:relative;">
 <div style="position:absolute;top:-24px;left:-24px;width:128px;height:128px;border-top:2px solid #F5A623;border-left:2px solid #F5A623;opacity:0.5;"></div>
 <img style="width:100%;filter:grayscale(1);box-shadow:0 25px 50px rgba(0,0,0,0.5);" alt="Mecánico profesional AutoMarcos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi2xxQKI69CckJkKhT7qICo7hL4x0F7jyYtPvDx72KtunPQKag3LuDQtmC8t4WQPipr1tHaEpfQ8U5JH5MW0CbscJsSIGm_fw4NMdHSdYQOKovLBtVFMGSNRqOOKKu3KNTQNk_HnyQ3_xunsm61_mO1oWckUdulQZWRkFL9Gt0oBX92ydEWtj2PiCJT08SGjinqSFxHICbSdjPMWLnNRa10ufQsQ2aaftWGxuI3EQ13AadPVptMJmjMKMp3iQExKzMACjkrm9iwPQ"/>
-<div style="position:absolute;bottom:-24px;right:-24px;background:#F5A623;padding:32px;display:none;" class="about-badge">
+<div style="position:absolute;bottom:-24px;right:-24px;background:#F5A623;padding:32px;" class="about-badge">
 <p style="color:#0D0D0D;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.25rem;text-transform:uppercase;line-height:1.2;letter-spacing:-0.02em;">Pasión por la<br/>Excelencia</p>
 </div>
 </div>
@@ -191,6 +140,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </div>
 </div>
 </section>
+
 <!-- Quality Section -->
 <section style="padding:96px 32px;background:#131313;">
 <div style="max-width:1280px;margin:0 auto;text-align:center;margin-bottom:64px;">
@@ -215,6 +165,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </div>
 </div>
 </section>
+
 <!-- Testimonials Section -->
 <section style="padding:96px 32px;background:#1c1b1b;">
 <div style="max-width:1280px;margin:0 auto;">
@@ -250,6 +201,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </div>
 </div>
 </section>
+
 <!-- Blog Section -->
 <section style="padding:96px 32px;background:#131313;">
 <div style="max-width:1280px;margin:0 auto;">
@@ -258,7 +210,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;">BLOG</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;" class="grid-auto">
-<!-- Blog Card 1 -->
 <a href={`${base}/blog/cuando-cambiar-aceite-coche`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
 <div style="aspect-ratio:16/9;overflow:hidden;">
 <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80" alt="Cuándo cambiar el aceite del coche" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
@@ -270,7 +221,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 <span style="display:inline-block;margin-top:12px;color:#F5A623;font-size:0.85rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;">Leer más →</span>
 </div>
 </a>
-<!-- Blog Card 2 -->
 <a href={`${base}/blog/preparar-coche-itv`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
 <div style="aspect-ratio:16/9;overflow:hidden;">
 <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80" alt="Cómo preparar tu coche para la ITV" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
@@ -282,7 +232,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 <span style="display:inline-block;margin-top:12px;color:#F5A623;font-size:0.85rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;">Leer más →</span>
 </div>
 </a>
-<!-- Blog Card 3 -->
 <a href={`${base}/blog/senales-cambiar-frenos`} style="text-decoration:none;display:block;background:#201f1f;border-radius:2px;overflow:hidden;transition:transform 0.3s;">
 <div style="aspect-ratio:16/9;overflow:hidden;">
 <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80" alt="5 señales de que tus frenos necesitan revisión" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
@@ -297,6 +246,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </div>
 </div>
 </section>
+
 <!-- Booking CTA -->
 <section style="padding:96px 0;position:relative;overflow:hidden;background:#F5A623;">
 <div style="position:absolute;inset:0;z-index:0;">
@@ -314,84 +264,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
 </a>
 </div>
 </section>
-<!-- Footer -->
-<footer style="background:#131313;width:100%;padding:64px 0 32px;border-top:1px solid rgba(255,255,255,0.05);">
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:48px;padding:0 32px;max-width:1280px;margin:0 auto;font-family:'Inter',sans-serif;font-size:0.9rem;line-height:1.6;" class="grid-auto">
-<div style="display:flex;flex-direction:column;gap:24px;">
-<div style="display:flex;align-items:center;gap:12px;">
-  <img src={`${base}/logo-automarcos.svg`} width="42" alt="AutoMarcos logo" style="display:inline-block" />
-  <span style="font-size:1.25rem;font-weight:700;color:#fff;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:-0.02em;">AutoMarcos</span>
-</div>
-<p style="color:rgba(255,255,255,0.5);max-width:300px;">Especialistas en mecánica de alta precisión y mantenimiento integral en Mallorca. Más de 44 años cuidando su seguridad.</p>
-<div style="display:flex;gap:16px;">
-<a style="color:rgba(255,255,255,0.5);" href="https://www.instagram.com/talleres_automarcos" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span></a>
-<a style="color:rgba(255,255,255,0.5);" href="tel:+34623942526"><span class="material-symbols-outlined">phone</span></a>
-<a style="color:rgba(255,255,255,0.5);" href="https://wa.me/34623942526" target="_blank" rel="noopener"><span class="material-symbols-outlined">chat</span></a>
-</div>
-</div>
-<div style="display:flex;flex-direction:column;gap:24px;">
-<h4 style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem;">Servicios</h4>
-<ul style="display:flex;flex-direction:column;gap:12px;color:rgba(255,255,255,0.5);list-style:none;padding:0;margin:0;">
-<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Mecánica General</a></li>
-<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Electricidad del Automóvil</a></li>
-<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Mantenimiento Preventivo</a></li>
-<li><a style="color:inherit;text-decoration:none;" href={`${base}/servicios`}>Inspección ITV</a></li>
-</ul>
-</div>
-<div style="display:flex;flex-direction:column;gap:24px;">
-<h4 style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem;">Ubicación</h4>
-<ul style="display:flex;flex-direction:column;gap:12px;color:rgba(255,255,255,0.5);list-style:none;padding:0;margin:0;">
-<li style="display:flex;align-items:flex-start;gap:8px;">
-<span class="material-symbols-outlined" style="color:#F5A623;font-size:1rem;">location_on</span>
-<span>Carrer de Sant Joaquim, 25<br/>Mallorca</span>
-</li>
-<li style="display:flex;align-items:center;gap:8px;">
-<span class="material-symbols-outlined" style="color:#F5A623;font-size:1rem;">schedule</span>
-<span>Lunes a Sábado: 09:00 - 16:00</span>
-</li>
-<li style="display:flex;align-items:center;gap:8px;">
-<span class="material-symbols-outlined" style="color:#F5A623;font-size:1rem;">phone_iphone</span>
-<a href="tel:+34623942526" style="color:inherit;text-decoration:none;">623 94 25 26</a>
-</li>
-</ul>
-</div>
-<div style="display:flex;flex-direction:column;gap:24px;">
-<h4 style="color:#fff;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem;">Síguenos</h4>
-<p style="color:rgba(255,255,255,0.5);">Síguenos en Instagram para ver nuestro trabajo y ofertas.</p>
-<a href="https://www.instagram.com/talleres_automarcos" target="_blank" rel="noopener" style="color:#F5A623;text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;">@talleres_automarcos</a>
-</div>
-</div>
-<div style="max-width:1280px;margin:0 auto;padding:0 32px;margin-top:64px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-<p style="color:rgba(255,255,255,0.5);font-size:0.75rem;">© 2024 Talleres AutoMarcos. Todos los derechos reservados.</p>
-<div style="display:flex;gap:24px;">
-<a style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;" href="#">Privacidad</a>
-<a style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;" href="#">Aviso Legal</a>
-<a style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;" href="#">Cookies</a>
-</div>
-</div>
-</footer>
-
-<!-- Mobile sticky CTA -->
-<div class="mobile-sticky-cta fixed bottom-0 left-0 right-0 z-[999]">
-  <a href="tel:+34623942526" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:#F5A623;color:#0D0D0D;font-family:'Oswald',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">
-    <svg style="width:18px;height:18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-    Llamar
-  </a>
-  <a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:#25d366;color:#fff;font-family:'Oswald',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">
-    <svg style="width:18px;height:18px;" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    WhatsApp
-  </a>
-</div>
-<!-- WhatsApp floating button (desktop) -->
-<a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.5);text-decoration:none;" class="whatsapp-desktop" aria-label="WhatsApp">
-  <svg style="width:30px;height:30px;color:#fff;" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
 
 <style>
   @media (max-width: 767px) {
-    #desktop-nav-home { display: none !important; }
-    #mobile-menu-btn-home { display: block !important; }
-    .whatsapp-desktop { display: none !important; }
     .about-badge { display: none !important; }
   }
   @media (min-width: 768px) {
@@ -399,27 +274,4 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,  '');
   }
 </style>
 
-<script>
-  // Mobile menu toggle
-  const btn = document.getElementById('mobile-menu-btn-home');
-  const dropdown = document.getElementById('mobile-dropdown-home');
-  if (btn && dropdown) {
-    btn.addEventListener('click', function() {
-      const isOpen = dropdown.style.display === 'flex';
-      dropdown.style.display = isOpen ? 'none' : 'flex';
-    });
-    // Close on link click
-    dropdown.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        dropdown.style.display = 'none';
-      });
-    });
-    // Close on click outside
-    document.addEventListener('click', function(e) {
-      if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
-        dropdown.style.display = 'none';
-      }
-    });
-  }
-</script>
-</html>
+</Layout>
