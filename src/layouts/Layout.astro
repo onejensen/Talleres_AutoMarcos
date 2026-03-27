@@ -8,6 +8,22 @@ interface Props {
 
 const { title, description = 'Talleres AutoMarcos - Tu taller mecánico de confianza en Mallorca. Mecánica general, electricidad, frenos, neumáticos, ITV y más.' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || base;
+
+const navLinks = [
+  { href: `${base}`, label: 'Inicio' },
+  { href: `${base}/servicios`, label: 'Servicios' },
+  { href: `${base}/galeria`, label: 'Galería' },
+  { href: `${base}/blog`, label: 'Blog' },
+  { href: `${base}/contacto`, label: 'Contacto' },
+];
+
+function isActive(href: string) {
+  const normalizedCurrent = currentPath.replace(/\/$/, '');
+  const normalizedHref = href.replace(/\/$/, '');
+  if (normalizedHref === base) return normalizedCurrent === base || normalizedCurrent === base + '/';
+  return normalizedCurrent.startsWith(normalizedHref);
+}
 ---
 
 <!doctype html>
@@ -44,11 +60,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <!-- Desktop nav -->
         <div id="desktop-nav" style="display:flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:0.85rem;">
-          <a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/`}>Inicio</a>
-          <a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/servicios`}>Servicios</a>
-          <a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/galeria`}>Galería</a>
-          <a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/blog`}>Blog</a>
-          <a style="color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;" href={`${base}/contacto`}>Contacto</a>
+          {navLinks.map(link => (
+            <a
+              href={link.href}
+              style={isActive(link.href)
+                ? "color:#F5A623;font-weight:700;text-decoration:none;padding:4px 12px;border-bottom:2px solid #F5A623;padding-bottom:4px;"
+                : "color:rgba(255,255,255,0.7);text-decoration:none;padding:4px 12px;"}
+            >{link.label}</a>
+          ))}
           <div style="height:24px;width:1px;background:rgba(255,255,255,0.1);margin:0 8px;"></div>
           <a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="background:#F5A623;color:#0D0D0D;padding:8px 20px;font-weight:700;text-decoration:none;border-radius:2px;">Pedir Cita</a>
         </div>
@@ -61,11 +80,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       <!-- Mobile dropdown -->
       <div id="mobile-dropdown" style="display:none;flex-direction:column;gap:4px;padding:0 8px 16px;">
-        <a href={`${base}/`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Inicio</a>
-        <a href={`${base}/servicios`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Servicios</a>
-        <a href={`${base}/galeria`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Galería</a>
-        <a href={`${base}/blog`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Blog</a>
-        <a href={`${base}/contacto`} style="padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;">Contacto</a>
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            style={isActive(link.href)
+              ? "padding:12px 16px;color:#F5A623;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;border-left:3px solid #F5A623;"
+              : "padding:12px 16px;color:#d1d5db;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;"}
+          >{link.label}</a>
+        ))}
         <a href="https://wa.me/34623942526" target="_blank" rel="noopener" style="margin-top:8px;padding:14px 24px;background:#F5A623;color:#0D0D0D;font-family:'Oswald',sans-serif;font-size:0.9rem;text-decoration:none;text-align:center;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Pedir Cita</a>
       </div>
     </nav>
